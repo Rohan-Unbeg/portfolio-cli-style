@@ -1525,6 +1525,7 @@ a:hover {
         opacity: 0;
         transform: translateY(30px) scale(0.96);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1722,13 +1723,40 @@ a:hover {
     letter-spacing: 0.01em;
 }
 
-.badge-green { background: rgba(74,201,74,0.12); color: #4ac94a; }
-.badge-blue { background: rgba(114,159,207,0.12); color: #729fcf; }
-.badge-yellow { background: rgba(233,185,110,0.12); color: #e9b96e; }
-.badge-red { background: rgba(239,41,41,0.12); color: #ef2929; }
-.badge-cyan { background: rgba(52,226,226,0.12); color: #34e2e2; }
-.badge-orange { background: rgba(233,84,32,0.12); color: #e95420; }
-.badge-purple { background: rgba(173,127,168,0.12); color: #ad7fa8; }
+.badge-green {
+    background: rgba(74, 201, 74, 0.12);
+    color: #4ac94a;
+}
+
+.badge-blue {
+    background: rgba(114, 159, 207, 0.12);
+    color: #729fcf;
+}
+
+.badge-yellow {
+    background: rgba(233, 185, 110, 0.12);
+    color: #e9b96e;
+}
+
+.badge-red {
+    background: rgba(239, 41, 41, 0.12);
+    color: #ef2929;
+}
+
+.badge-cyan {
+    background: rgba(52, 226, 226, 0.12);
+    color: #34e2e2;
+}
+
+.badge-orange {
+    background: rgba(233, 84, 32, 0.12);
+    color: #e95420;
+}
+
+.badge-purple {
+    background: rgba(173, 127, 168, 0.12);
+    color: #ad7fa8;
+}
 
 .badges {
     padding: 4px 14px;
@@ -1806,7 +1834,7 @@ a:hover {
 
     .mob-app-link {
         display: inline-block;
-        background: rgba(255,255,255,0.05);
+        background: rgba(255, 255, 255, 0.05);
         color: var(--text);
         font-family: 'Ubuntu Mono', monospace;
         font-size: 11px;
@@ -1818,7 +1846,7 @@ a:hover {
     }
 
     .mob-app-link:hover {
-        background: rgba(255,255,255,0.1);
+        background: rgba(255, 255, 255, 0.1);
     }
 
     /* Hide ASCII art on mobile */
@@ -1829,7 +1857,7 @@ a:hover {
 
 /* ── Watchlist App GUI ─────────────────────────────── */
 .wl-tab {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
     color: var(--dim);
     font-family: 'Ubuntu Mono', monospace;
@@ -1840,10 +1868,12 @@ a:hover {
     transition: all 0.15s;
     white-space: nowrap;
 }
+
 .wl-tab:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: var(--text);
 }
+
 .wl-tab-active {
     background: var(--prompt) !important;
     border-color: var(--prompt) !important;
@@ -1861,43 +1891,49 @@ a:hover {
     border-radius: 8px;
     border: 1px solid var(--border);
     overflow: hidden;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     position: relative;
     display: block;
     cursor: pointer;
     height: 210px;
 }
+
 .wl-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     border-color: var(--border2);
 }
 
 /* Skeleton loading state */
 .wl-skeleton {
     height: 210px;
-    background: linear-gradient(
-        90deg,
-        rgba(255,255,255,0.04) 25%,
-        rgba(255,255,255,0.08) 50%,
-        rgba(255,255,255,0.04) 75%
-    );
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.04) 25%,
+            rgba(255, 255, 255, 0.08) 50%,
+            rgba(255, 255, 255, 0.04) 75%);
     background-size: 200% 100%;
     animation: wlShimmer 1.4s infinite;
 }
+
 @keyframes wlShimmer {
-    0%   { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 .wl-poster-wrap {
     position: relative;
     width: 100%;
     height: 210px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
+
 .wl-poster {
     width: 100%;
     height: 100%;
@@ -1905,9 +1941,11 @@ a:hover {
     display: block;
     transition: transform 0.3s;
 }
+
 .wl-card:hover .wl-poster {
     transform: scale(1.04);
 }
+
 .wl-poster-placeholder {
     width: 100%;
     height: 100%;
@@ -1920,11 +1958,12 @@ a:hover {
     color: var(--border2);
     font-family: 'Ubuntu Mono', monospace;
 }
+
 .wl-rating {
     position: absolute;
     bottom: 5px;
     right: 5px;
-    background: rgba(0,0,0,0.75);
+    background: rgba(0, 0, 0, 0.75);
     color: #f1c40f;
     font-size: 10px;
     padding: 2px 6px;
@@ -1932,11 +1971,12 @@ a:hover {
     font-family: 'Ubuntu Mono', monospace;
     backdrop-filter: blur(4px);
 }
+
 .wl-dropped {
     position: absolute;
     top: 5px;
     left: 5px;
-    background: rgba(239,41,41,0.8);
+    background: rgba(239, 41, 41, 0.8);
     color: #fff;
     font-size: 9px;
     padding: 2px 5px;
@@ -1945,20 +1985,23 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
 .wl-card-info {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 22px 8px 8px;
-    background: linear-gradient(to top, rgba(0,0,0,0.92) 60%, transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 60%, transparent);
     opacity: 0;
     transition: opacity 0.2s;
     pointer-events: none;
 }
+
 .wl-card:hover .wl-card-info {
     opacity: 1;
 }
+
 .wl-card-title {
     font-size: 11px;
     font-weight: 600;
@@ -1969,21 +2012,23 @@ a:hover {
     line-height: 1.3;
     margin-bottom: 2px;
 }
+
 .wl-card-meta {
     font-size: 9px;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.6);
     line-height: 1.4;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .wl-card-overview {
     display: none;
 }
 
 #wl-search:focus {
     border-color: var(--prompt);
-    box-shadow: 0 0 0 2px rgba(233,84,32,0.2);
+    box-shadow: 0 0 0 2px rgba(233, 84, 32, 0.2);
 }
 
 /* ── Watchlist Detail Modal ────────────────────────── */
@@ -1997,13 +2042,23 @@ a:hover {
     overflow-y: auto;
     animation: wlModalIn 0.22s ease;
 }
+
 #wl-modal.open {
     display: flex;
 }
+
 @keyframes wlModalIn {
-    from { opacity: 0; transform: translateY(18px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 .wl-modal-backdrop {
     width: 100%;
     height: 220px;
@@ -2013,12 +2068,14 @@ a:hover {
     flex-shrink: 0;
     filter: brightness(0.55);
 }
+
 .wl-modal-backdrop-placeholder {
     width: 100%;
     height: 220px;
     flex-shrink: 0;
     background: linear-gradient(135deg, var(--header), var(--border));
 }
+
 .wl-modal-hero {
     display: flex;
     gap: 20px;
@@ -2027,6 +2084,7 @@ a:hover {
     position: relative;
     align-items: flex-end;
 }
+
 .wl-modal-poster {
     width: 110px;
     min-width: 110px;
@@ -2034,9 +2092,10 @@ a:hover {
     object-fit: cover;
     border-radius: 6px;
     border: 2px solid var(--border2);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
     flex-shrink: 0;
 }
+
 .wl-modal-poster-placeholder {
     width: 110px;
     min-width: 110px;
@@ -2053,9 +2112,11 @@ a:hover {
     font-family: 'Ubuntu Mono', monospace;
     flex-shrink: 0;
 }
+
 .wl-modal-titles {
     padding-bottom: 8px;
 }
+
 .wl-modal-title {
     font-size: 18px;
     font-weight: 700;
@@ -2063,36 +2124,42 @@ a:hover {
     line-height: 1.2;
     margin-bottom: 4px;
 }
+
 .wl-modal-tagline {
     font-size: 11px;
     color: var(--dim);
     font-style: italic;
     margin-bottom: 6px;
 }
+
 .wl-modal-chips {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     margin-top: 6px;
 }
+
 .wl-modal-chip {
     font-size: 10px;
     padding: 2px 8px;
     border-radius: 10px;
     border: 1px solid var(--border2);
     color: var(--text);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     font-family: 'Ubuntu Mono', monospace;
 }
+
 .wl-modal-chip.orange {
     border-color: var(--prompt);
     color: var(--prompt);
-    background: rgba(233,84,32,0.1);
+    background: rgba(233, 84, 32, 0.1);
 }
+
 .wl-modal-body {
     padding: 18px 20px 30px;
     flex: 1;
 }
+
 .wl-modal-overview {
     font-size: 12px;
     color: var(--text);
@@ -2100,17 +2167,20 @@ a:hover {
     margin-bottom: 16px;
     opacity: 0.85;
 }
+
 .wl-modal-stats {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
     margin-bottom: 18px;
 }
+
 .wl-modal-stat {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
+
 .wl-modal-stat-label {
     font-size: 9px;
     color: var(--dim);
@@ -2118,19 +2188,22 @@ a:hover {
     letter-spacing: 0.8px;
     font-family: 'Ubuntu Mono', monospace;
 }
+
 .wl-modal-stat-value {
     font-size: 13px;
     font-weight: 600;
     color: var(--white);
     font-family: 'Ubuntu Mono', monospace;
 }
+
 .wl-modal-actions {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
+
 .wl-modal-back {
-    background: rgba(255,255,255,0.06);
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid var(--border);
     color: var(--text);
     font-family: 'Ubuntu Mono', monospace;
@@ -2140,10 +2213,14 @@ a:hover {
     cursor: pointer;
     transition: background 0.15s;
 }
-.wl-modal-back:hover { background: rgba(255,255,255,0.12); }
+
+.wl-modal-back:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
 .wl-modal-tmdb {
-    background: rgba(1,180,228,0.12);
-    border: 1px solid rgba(1,180,228,0.4);
+    background: rgba(1, 180, 228, 0.12);
+    border: 1px solid rgba(1, 180, 228, 0.4);
     color: #01b4e4;
     font-family: 'Ubuntu Mono', monospace;
     font-size: 11px;
@@ -2153,7 +2230,10 @@ a:hover {
     text-decoration: none;
     transition: background 0.15s;
 }
-.wl-modal-tmdb:hover { background: rgba(1,180,228,0.22); }
+
+.wl-modal-tmdb:hover {
+    background: rgba(1, 180, 228, 0.22);
+}
 
 /* ── Onboarding Tags ───────────────────────────────── */
 .onboarding-tagline {
@@ -2169,7 +2249,7 @@ a:hover {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 10px;
     color: var(--text);
-    background: rgba(255,255,255,0.06);
+    background: rgba(255, 255, 255, 0.06);
     border: 1px solid var(--border);
     padding: 3px 10px;
     border-radius: 12px;
@@ -2183,24 +2263,25 @@ a:hover {
     pointer-events: none;
     display: none;
 }
+
 #tour-overlay.active {
     display: block;
 }
 
-/* Dark backdrop with a cutout hole for the spotlight */
+/* Lighter backdrop — 42% so content still readable */
 #tour-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(5, 2, 8, 0.72);
+    background: rgba(5, 2, 8, 0.42);
     transition: opacity 0.3s;
     pointer-events: all;
 }
 
-/* Spotlight highlight ring */
+/* Spotlight — gentle ring, lighter outer shadow */
 #tour-spotlight {
     position: absolute;
     border-radius: 10px;
-    box-shadow: 0 0 0 4px var(--prompt), 0 0 0 9999px rgba(5, 2, 8, 0.72);
+    box-shadow: 0 0 0 3px var(--prompt), 0 0 0 9999px rgba(5, 2, 8, 0.42);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
     z-index: 90001;
@@ -2214,10 +2295,32 @@ a:hover {
     flex-direction: column;
     gap: 0;
     pointer-events: all;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1), top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     max-width: 320px;
     min-width: 260px;
+    width: 300px;
 }
+
+/* Mobile: pin bubble to bottom of screen */
+@media (max-width: 639px) {
+    #tour-bubble {
+        position: fixed !important;
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 16px !important;
+        top: auto !important;
+        width: auto !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+    #tour-spotlight {
+        display: none;
+    }
+    #tour-backdrop {
+        background: rgba(5, 2, 8, 0.55);
+    }
+}
+
 #tour-bubble.bubble-bottom::before,
 #tour-bubble.bubble-top::before,
 #tour-bubble.bubble-left::before,
@@ -2226,20 +2329,28 @@ a:hover {
     position: absolute;
     border: 8px solid transparent;
 }
+
 #tour-bubble.bubble-bottom::before {
-    top: -16px; left: 28px;
+    top: -16px;
+    left: 28px;
     border-bottom-color: var(--surface);
 }
+
 #tour-bubble.bubble-top::before {
-    bottom: -16px; left: 28px;
+    bottom: -16px;
+    left: 28px;
     border-top-color: var(--surface);
 }
+
 #tour-bubble.bubble-left::before {
-    right: -16px; top: 18px;
+    right: -16px;
+    top: 18px;
     border-left-color: var(--surface);
 }
+
 #tour-bubble.bubble-right::before {
-    left: -16px; top: 18px;
+    left: -16px;
+    top: 18px;
     border-right-color: var(--surface);
 }
 
@@ -2248,7 +2359,7 @@ a:hover {
     border: 1px solid var(--border2);
     border-radius: 12px;
     padding: 16px 18px 14px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .tour-avatar-row {
@@ -2257,6 +2368,7 @@ a:hover {
     gap: 10px;
     margin-bottom: 10px;
 }
+
 .tour-avatar {
     width: 36px;
     height: 36px;
@@ -2269,24 +2381,35 @@ a:hover {
     font-weight: 700;
     color: #fff;
     flex-shrink: 0;
-    box-shadow: 0 2px 10px rgba(233,84,32,0.4);
+    box-shadow: 0 2px 10px rgba(233, 84, 32, 0.4);
     animation: tourAvatarPulse 2s ease-in-out infinite;
 }
+
 @keyframes tourAvatarPulse {
-    0%, 100% { box-shadow: 0 2px 10px rgba(233,84,32,0.4); }
-    50%       { box-shadow: 0 2px 20px rgba(233,84,32,0.75); }
+
+    0%,
+    100% {
+        box-shadow: 0 2px 10px rgba(233, 84, 32, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 2px 20px rgba(233, 84, 32, 0.75);
+    }
 }
+
 .tour-avatar-name {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 11px;
     font-weight: 700;
     color: var(--prompt);
 }
+
 .tour-avatar-sub {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 10px;
     color: var(--dim);
 }
+
 .tour-msg {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 12px;
@@ -2295,31 +2418,36 @@ a:hover {
     margin-bottom: 14px;
     min-height: 40px;
 }
+
 .tour-msg .tour-key {
     display: inline-block;
-    background: rgba(233,84,32,0.15);
+    background: rgba(233, 84, 32, 0.15);
     color: var(--prompt);
     padding: 1px 7px;
     border-radius: 4px;
-    border: 1px solid rgba(233,84,32,0.3);
+    border: 1px solid rgba(233, 84, 32, 0.3);
     font-size: 11px;
     font-family: 'Ubuntu Mono', monospace;
 }
+
 .tour-msg .tour-hi {
     color: var(--prompt);
     font-weight: 700;
 }
+
 .tour-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
 }
+
 .tour-dots {
     display: flex;
     gap: 5px;
     align-items: center;
 }
+
 .tour-dot {
     width: 6px;
     height: 6px;
@@ -2327,15 +2455,18 @@ a:hover {
     background: var(--border2);
     transition: all 0.2s;
 }
+
 .tour-dot.active {
     background: var(--prompt);
     width: 18px;
     border-radius: 3px;
 }
+
 .tour-btn-row {
     display: flex;
     gap: 6px;
 }
+
 .tour-btn {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 11px;
@@ -2344,19 +2475,25 @@ a:hover {
     border: 1px solid var(--border);
     cursor: pointer;
     transition: all 0.15s;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     color: var(--text);
 }
-.tour-btn:hover { background: rgba(255,255,255,0.1); }
+
+.tour-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .tour-btn.primary {
     background: var(--prompt);
     border-color: var(--prompt);
     color: #fff;
     font-weight: 700;
 }
+
 .tour-btn.primary:hover {
     filter: brightness(1.15);
 }
+
 .tour-skip {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 10px;
@@ -2368,4 +2505,566 @@ a:hover {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
-.tour-skip:hover { color: var(--text); }
+
+.tour-skip:hover {
+    color: var(--text);
+}
+
+/* ── App Drawer (Ubuntu Activities overlay) ──────────── */
+#app-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 85000;
+    background: rgba(5, 2, 12, 0.88);
+    backdrop-filter: blur(18px) saturate(1.2);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 48px 24px 24px;
+    animation: drawerIn 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#app-drawer-overlay.open {
+    display: flex;
+}
+
+@keyframes drawerIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.app-drawer-search-wrap {
+    width: 100%;
+    max-width: 440px;
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.app-drawer-search {
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 10px 16px 10px 40px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.app-drawer-search:focus {
+    border-color: var(--prompt);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.app-drawer-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--dim);
+    pointer-events: none;
+}
+
+.app-drawer-title {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 11px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    align-self: flex-start;
+    max-width: 680px;
+    width: 100%;
+}
+
+.app-drawer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 88px);
+    gap: 8px;
+    justify-content: center;
+    max-width: 700px;
+    width: 100%;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+
+.app-drawer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px 6px;
+    border-radius: 10px;
+    transition: background 0.15s, transform 0.15s;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.app-drawer-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.app-drawer-item-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+}
+
+.app-drawer-item-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.app-drawer-item-name {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.3;
+    max-width: 76px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.app-drawer-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--dim);
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    transition: color 0.15s, background 0.15s;
+}
+
+.app-drawer-close:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.08);
+}
+
+/* Text editor window */
+.text-editor-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg);
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.text-editor-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,0,0,0.2);
+    flex-shrink: 0;
+    font-size: 11px;
+    color: var(--dim);
+    flex-wrap: wrap;
+}
+
+.text-editor-filename {
+    color: var(--prompt);
+    font-weight: 700;
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.text-editor-body {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+
+.text-editor-gutter {
+    width: 38px;
+    background: rgba(0,0,0,0.15);
+    border-right: 1px solid var(--border);
+    padding: 12px 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: right;
+}
+
+.text-editor-gutter-line {
+    font-size: 11px;
+    color: var(--dim);
+    opacity: 0.5;
+    padding: 0 8px;
+    line-height: 1.6;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.text-editor-content {
+    flex: 1;
+    overflow: auto;
+    padding: 12px 16px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* GitHub explorer tree */
+.gh-explorer-wrap {
+    display: flex;
+    height: 100%;
+    background: var(--bg);
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+.gh-explorer-sidebar {
+    width: 200px;
+    min-width: 160px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.gh-explorer-sidebar-header {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 10px;
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+
+.gh-explorer-tree {
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px 0;
+}
+
+.gh-tree-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    color: var(--text);
+    transition: background 0.1s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+}
+
+.gh-tree-item:hover { background: rgba(255,255,255,0.06); }
+.gh-tree-item.active { background: rgba(233,84,32,0.15); color: var(--prompt); }
+.gh-tree-item.dir { color: #e9b96e; }
+.gh-tree-item .gh-tree-icon { flex-shrink: 0; opacity: 0.7; }
+
+.gh-explorer-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.gh-explorer-readme {
+    flex: 1;
+    overflow: auto;
+    padding: 16px 20px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.gh-explorer-readme h1, .gh-explorer-readme h2, .gh-explorer-readme h3 {
+    color: var(--prompt);
+    margin: 12px 0 6px;
+}
+
+.gh-explorer-readme a { color: var(--blue); }
+.gh-explorer-readme code {
+    background: rgba(255,255,255,0.07);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.gh-explorer-readme pre {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    overflow-x: auto;
+    margin: 8px 0;
+}
+
+.gh-breadcrumb {
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,0,0,0.15);
+    font-size: 11px;
+    color: var(--dim);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.gh-breadcrumb span { cursor: pointer; color: var(--blue); }
+.gh-breadcrumb span:hover { text-decoration: underline; }
+.gh-breadcrumb .sep { color: var(--dim); cursor: default; }
+
+.gh-file-grid {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.gh-file-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--text);
+    transition: background 0.1s;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.gh-file-row:hover { background: rgba(255,255,255,0.05); }
+.gh-file-row.dir { color: #e9b96e; }
+.gh-file-row .gh-file-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gh-file-row .gh-file-size { color: var(--dim); font-size: 10px; flex-shrink: 0; }
+
+.gh-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--dim);
+    font-size: 12px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.gh-error {
+    padding: 20px;
+    color: var(--dim);
+    font-size: 12px;
+    line-height: 1.7;
+}
+/* ── Text Editor ──────────────────────────────────────────────────────────── */
+.te-pre {
+    margin: 0;
+    padding: 12px 0;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #e6edf3;
+    background: #0d1117;
+    white-space: pre;
+    overflow-x: auto;
+    min-height: 100%;
+}
+.te-line {
+    display: block;
+    white-space: pre;
+}
+.te-ln {
+    display: inline-block;
+    width: 40px;
+    text-align: right;
+    padding-right: 16px;
+    color: #484f58;
+    user-select: none;
+    border-right: 1px solid #21262d;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.te-code { white-space: pre; }
+
+/* ── GitHub Tree Visualizer ───────────────────────────────────────────────── */
+.ghtree-sidebar {
+    width: 240px;
+    min-width: 200px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #0d1117;
+}
+.ghtree-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 12px;
+}
+.ghtree-repo-header {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,0,0,0.2);
+}
+.ghtree-gh-link {
+    color: var(--blue);
+    text-decoration: none;
+    margin-left: auto;
+    font-size: 12px;
+}
+.ghtree-gh-link:hover { text-decoration: underline; }
+.ghtree-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    cursor: pointer;
+    color: #e6edf3;
+    font-size: 12px;
+    transition: background 0.1s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    list-style: none;
+}
+.ghtree-item:hover { background: rgba(255,255,255,0.07); }
+.ghtree-dir > summary { list-style: none; }
+.ghtree-dir > summary::before { content: "▸ "; color: #484f58; font-size: 10px; }
+.ghtree-dir[open] > summary::before { content: "▾ "; }
+.ghtree-file { color: #e6edf3; }
+.ghtree-file:hover { background: rgba(255,255,255,0.07); color: #79c0ff; }
+.ghtree-preview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #0d1117;
+}
+.ghtree-file-header {
+    padding: 7px 14px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    color: #e6edf3;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,0,0,0.2);
+    flex-shrink: 0;
+}
+.ghtree-open-editor {
+    margin-left: 8px;
+    padding: 3px 10px;
+    font-size: 11px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    color: var(--text);
+    cursor: pointer;
+    font-family: 'Ubuntu Mono', monospace;
+    transition: background 0.15s;
+}
+.ghtree-open-editor:hover { background: rgba(255,255,255,0.15); }
+
+/* ── Explorer Repo Cards ──────────────────────────────────────────────────── */
+.explorer-repo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 4px 0;
+}
+.explorer-repo-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: background 0.15s, border-color 0.15s;
+}
+.explorer-repo-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(255,255,255,0.18);
+}
+.explorer-repo-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.explorer-repo-name {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: #79c0ff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.explorer-repo-name:hover { text-decoration: underline; }
+.explorer-repo-badge {
+    font-size: 10px;
+    color: var(--dim);
+    background: rgba(255,255,255,0.06);
+    padding: 2px 6px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+.explorer-repo-gh-link {
+    margin-left: auto;
+    color: var(--dim);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.1s;
+}
+.explorer-repo-gh-link:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+.explorer-repo-desc {
+    font-size: 12px;
+    color: var(--dim);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.explorer-repo-footer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.explorer-repo-tree-btn {
+    margin-left: auto;
+    padding: 3px 10px;
+    font-size: 11px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    cursor: pointer;
+    font-family: 'Ubuntu Mono', monospace;
+    transition: background 0.15s;
+}
+.explorer-repo-tree-btn:hover { background: rgba(255,255,255,0.12); }

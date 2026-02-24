@@ -12,9 +12,9 @@ let cwd = "~";
 
 // ── TMDB Config ─────────────────────────────────────────────────────────────
 const _cfg = window.PORTFOLIO_CONFIG || {};
-const TMDB_KEY   = _cfg.TMDB_KEY   || "";
+const TMDB_KEY = _cfg.TMDB_KEY || "";
 const TMDB_TOKEN = _cfg.TMDB_TOKEN || "";
-const TMDB_IMG     = "https://image.tmdb.org/t/p/w300";
+const TMDB_IMG = "https://image.tmdb.org/t/p/w300";
 const TMDB_IMG_BIG = "https://image.tmdb.org/t/p/w500";
 const tmdbCache = {}; // title -> tmdb result
 
@@ -237,52 +237,95 @@ function about() {
 
     // Header
     line(`  <span class="section-header">Rohan Unbeg</span>`);
-    line(`  <span class="c-orange" style="font-size:13px">Backend Developer · Open Source Contributor @ Oppia Foundation</span>`);
+    line(
+        `  <span class="c-orange" style="font-size:13px">Backend Developer · Open Source Contributor @ Oppia Foundation</span>`,
+    );
     blank();
 
     // Bio
-    line(`  <span class="c-dim">── Who I Am ──────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Who I Am ──────────────────────────────</span>`,
+    );
     blank();
-    line(`  <span class="c-text" style="line-height:1.8">CS undergraduate passionate about resilient infrastructure,</span>`);
-    line(`  <span class="c-text" style="line-height:1.8">fixing technical debt, and scaling tools for global learners.</span>`);
-    line(`  <span class="c-text" style="line-height:1.8">I build things that don't break at 3 AM.</span>`);
+    line(
+        `  <span class="c-text" style="line-height:1.8">CS undergraduate passionate about resilient infrastructure,</span>`,
+    );
+    line(
+        `  <span class="c-text" style="line-height:1.8">fixing technical debt, and scaling tools for global learners.</span>`,
+    );
+    line(
+        `  <span class="c-text" style="line-height:1.8">I build things that don't break at 3 AM.</span>`,
+    );
     blank();
 
     // Details
-    line(`  <span class="c-dim">── Details ───────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Details ───────────────────────────────</span>`,
+    );
     blank();
     const details = [
-        ["Education", "B.Tech CS · <span class='c-blue'>Vishwakarma University</span> · 2023–2027"],
-        ["Current", "Open Source Contributor · <span class='c-green'>Oppia Foundation</span>"],
+        [
+            "Education",
+            "B.Tech CS · <span class='c-blue'>Vishwakarma University</span> · 2023–2027",
+        ],
+        [
+            "Current",
+            "Open Source Contributor · <span class='c-green'>Oppia Foundation</span>",
+        ],
         ["Focus", "Backend infra · Data integrity · CI/CD pipelines"],
         ["Learning", "System Design · Apache Beam · GCP · Distributed Systems"],
         ["Location", "Pune, India"],
-        ["Status", "<span class='c-green'>● Open to internships & collaborations</span>"],
+        [
+            "Status",
+            "<span class='c-green'>● Open to internships & collaborations</span>",
+        ],
     ];
     details.forEach(([label, val]) => {
-        line(`  <span class="c-yellow" style="display:inline-block;width:110px">${label}</span> ${val}`);
+        line(
+            `  <span class="c-yellow" style="display:inline-block;width:110px">${label}</span> ${val}`,
+        );
     });
     blank();
 
     // Achievements
-    line(`  <span class="c-dim">── Achievements ──────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Achievements ──────────────────────────</span>`,
+    );
     blank();
-    line(`  <span class="c-green">🏆</span> <span class="c-white bold">SugarSync — Hackathon Winner</span>`);
-    line(`  <span class="c-dim" style="margin-left:24px">Built a gamified health tracking app. Won at competitive hackathon.</span>`);
+    line(
+        `  <span class="c-green">🏆</span> <span class="c-white bold">SugarSync — Hackathon Winner</span>`,
+    );
+    line(
+        `  <span class="c-dim" style="margin-left:24px">Built a gamified health tracking app. Won at competitive hackathon.</span>`,
+    );
     blank();
-    line(`  <span class="c-green">🏛</span> <span class="c-white bold">Oppia Foundation — Merged PRs to production</span>`);
-    line(`  <span class="c-dim" style="margin-left:24px">Backend contributions impacting millions of learners globally.</span>`);
+    line(
+        `  <span class="c-green">🏛</span> <span class="c-white bold">Oppia Foundation — Merged PRs to production</span>`,
+    );
+    line(
+        `  <span class="c-dim" style="margin-left:24px">Backend contributions impacting millions of learners globally.</span>`,
+    );
     blank();
-    line(`  <span class="c-green">🤖</span> <span class="c-white bold">AI Maintainer — Featured Project</span>`);
-    line(`  <span class="c-dim" style="margin-left:24px">Autonomous codebase upkeep tool powered by Gemini & Groq.</span>`);
+    line(
+        `  <span class="c-green">🤖</span> <span class="c-white bold">AI Maintainer — Featured Project</span>`,
+    );
+    line(
+        `  <span class="c-dim" style="margin-left:24px">Autonomous codebase upkeep tool powered by Gemini & Groq.</span>`,
+    );
     blank();
 
     // Resume download
-    line(`  <span class="c-dim">── Resume ────────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Resume ────────────────────────────────</span>`,
+    );
     blank();
-    line(`  <span class="c-dim">▸</span> <a href="resume.pdf" target="_blank" class="c-blue" style="cursor:pointer">📄 View Resume (PDF)</a>  <button onclick="window.open('resume.pdf','_blank')" class="btn-sm" style="font-size:10px;margin-left:6px">open</button>`);
+    line(
+        `  <span class="c-dim">▸</span> <a href="resume.pdf" target="_blank" class="c-blue" style="cursor:pointer">📄 View Resume (PDF)</a>  <button onclick="window.open('resume.pdf','_blank')" class="btn-sm" style="font-size:10px;margin-left:6px">open</button>`,
+    );
     blank();
-    line(`  <span class="c-dim">Run <span class="c-orange" onclick="tabNav('experience')" style="cursor:pointer">experience</span> to see my work, or <span class="c-orange" onclick="tabNav('contact')" style="cursor:pointer">contact</span> to reach out.</span>`);
+    line(
+        `  <span class="c-dim">Run <span class="c-orange" onclick="tabNav('experience')" style="cursor:pointer">experience</span> to see my work, or <span class="c-orange" onclick="tabNav('contact')" style="cursor:pointer">contact</span> to reach out.</span>`,
+    );
     blank();
 }
 
@@ -290,39 +333,94 @@ function about() {
 function skills() {
     blank();
     line(`  <span class="section-header">Tech Stack</span>`);
-    line(`  <span class="c-dim" style="font-size:11px">Proficiency: ████ Daily driver · ███░ Proficient · ██░░ Familiar · █░░░ Learning</span>`);
+    line(
+        `  <span class="c-dim" style="font-size:11px">Proficiency: ████ Daily driver · ███░ Proficient · ██░░ Familiar · █░░░ Learning</span>`,
+    );
     blank();
 
-    line(`  <span class="c-dim">── Languages ──────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Languages ──────────────────────────────</span>`,
+    );
     renderSkillTier([
-        ["Python", "████", "#4ac94a", "Daily driver — backend, scripting, data pipelines"],
-        ["TypeScript", "████", "#729fcf", "Daily driver — Angular, Node.js, full-stack"],
-        ["JavaScript", "███░", "#e9b96e", "Proficient — DOM, vanilla JS, this portfolio"],
+        [
+            "Python",
+            "████",
+            "#4ac94a",
+            "Daily driver — backend, scripting, data pipelines",
+        ],
+        [
+            "TypeScript",
+            "████",
+            "#729fcf",
+            "Daily driver — Angular, Node.js, full-stack",
+        ],
+        [
+            "JavaScript",
+            "███░",
+            "#e9b96e",
+            "Proficient — DOM, vanilla JS, this portfolio",
+        ],
     ]);
     blank();
 
-    line(`  <span class="c-dim">── Backend & Infrastructure ────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Backend & Infrastructure ────────────────</span>`,
+    );
     renderSkillTier([
         ["Node.js", "███░", "#6da55f", "REST APIs, Express, server-side logic"],
         ["GCP", "██░░", "#4285f4", "App Engine, Cloud Functions, Datastore"],
-        ["Apache Beam", "██░░", "#e67e22", "Batch pipelines, data processing jobs"],
+        [
+            "Apache Beam",
+            "██░░",
+            "#e67e22",
+            "Batch pipelines, data processing jobs",
+        ],
         ["Docker", "██░░", "#0db7ed", "Containerization, dev environments"],
-        ["CI/CD", "███░", "#4ac94a", "GitHub Actions, CircleCI, automated testing"],
+        [
+            "CI/CD",
+            "███░",
+            "#4ac94a",
+            "GitHub Actions, CircleCI, automated testing",
+        ],
     ]);
     blank();
 
-    line(`  <span class="c-dim">── Frontend ───────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Frontend ───────────────────────────────</span>`,
+    );
     renderSkillTier([
-        ["Angular", "███░", "#dd0031", "Oppia's frontend stack, components, RxJS"],
-        ["React", "██░░", "#61dafb", "Personal projects, hooks, state management"],
-        ["Tailwind CSS", "███░", "#38bdf8", "Utility-first styling, responsive design"],
+        [
+            "Angular",
+            "███░",
+            "#dd0031",
+            "Oppia's frontend stack, components, RxJS",
+        ],
+        [
+            "React",
+            "██░░",
+            "#61dafb",
+            "Personal projects, hooks, state management",
+        ],
+        [
+            "Tailwind CSS",
+            "███░",
+            "#38bdf8",
+            "Utility-first styling, responsive design",
+        ],
     ]);
     blank();
 
-    line(`  <span class="c-dim">── Databases ──────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Databases ──────────────────────────────</span>`,
+    );
     renderSkillTier([
         ["PostgreSQL", "██░░", "#336791", "Relational queries, schema design"],
-        ["MongoDB", "██░░", "#4ea94b", "Document stores, aggregation pipelines"],
+        [
+            "MongoDB",
+            "██░░",
+            "#4ea94b",
+            "Document stores, aggregation pipelines",
+        ],
     ]);
     blank();
 
@@ -376,7 +474,9 @@ function renderBars(items) {
 function experience() {
     blank();
     line(`  <span class="section-header">Experience</span>`);
-    line(`  <span class="c-dim">$ git log --author="Rohan Unbeg" --oneline</span>`);
+    line(
+        `  <span class="c-dim">$ git log --author="Rohan Unbeg" --oneline</span>`,
+    );
     blank();
     line(
         `  <span class="c-green bold">Oppia Foundation</span>  <span class="c-dim">— Open Source Contributor · 2024–present</span>`,
@@ -434,18 +534,37 @@ function experience() {
     blank();
 
     // Achievements section
-    line(`  <span class="c-dim">── Achievements & Awards ──────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Achievements & Awards ──────────────────</span>`,
+    );
     blank();
 
     const achievements = [
-        { icon: "🏆", title: "Hackathon Winner — SugarSync", desc: "Built a gamified health tracking app. Real-time glucose data integration with gamification layer.", color: "c-yellow" },
-        { icon: "🏛", title: "Open Source — Oppia Foundation", desc: "Multiple PRs merged to production codebase used by millions of students worldwide.", color: "c-green" },
-        { icon: "🤖", title: "Featured — Autonomous AI Maintainer", desc: "Dual-engine automated codebase upkeep tool. Scans repos, generates fixes, opens PRs autonomously.", color: "c-purple" },
+        {
+            icon: "🏆",
+            title: "Hackathon Winner — SugarSync",
+            desc: "Built a gamified health tracking app. Real-time glucose data integration with gamification layer.",
+            color: "c-yellow",
+        },
+        {
+            icon: "🏛",
+            title: "Open Source — Oppia Foundation",
+            desc: "Multiple PRs merged to production codebase used by millions of students worldwide.",
+            color: "c-green",
+        },
+        {
+            icon: "🤖",
+            title: "Featured — Autonomous AI Maintainer",
+            desc: "Dual-engine automated codebase upkeep tool. Scans repos, generates fixes, opens PRs autonomously.",
+            color: "c-purple",
+        },
     ];
 
-    achievements.forEach(a => {
+    achievements.forEach((a) => {
         line(`  ${a.icon} <span class="${a.color} bold">${a.title}</span>`);
-        line(`     <span class="c-dim" style="font-size:12px;line-height:1.7">${a.desc}</span>`);
+        line(
+            `     <span class="c-dim" style="font-size:12px;line-height:1.7">${a.desc}</span>`,
+        );
         blank();
     });
 }
@@ -493,7 +612,9 @@ async function projects() {
         if (!res.ok) throw new Error("Network response was not ok");
         const repos = await res.json();
 
-        line(`  <span class="c-dim">── Personal Projects ──────────────────────</span>`);
+        line(
+            `  <span class="c-dim">── Personal Projects ──────────────────────</span>`,
+        );
         blank();
 
         repos.forEach((p) => {
@@ -572,7 +693,9 @@ function stats() {
     line(`  <span class="c-dim">$ gh api /users/rohan-unbeg --stats</span>`);
     blank();
 
-    line(`  <span class="c-dim">── Overview ──────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Overview ──────────────────────────────</span>`,
+    );
     blank();
 
     const statsData = [
@@ -585,11 +708,15 @@ function stats() {
     ];
 
     statsData.forEach(([label, val, cls]) => {
-        line(`  <span class="c-dim" style="display:inline-block;width:170px">${label}</span> <span class="${cls}">${val}</span>`);
+        line(
+            `  <span class="c-dim" style="display:inline-block;width:170px">${label}</span> <span class="${cls}">${val}</span>`,
+        );
     });
 
     blank();
-    line(`  <span class="c-dim">── Language Breakdown ─────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Language Breakdown ─────────────────────</span>`,
+    );
     blank();
 
     // Visual language breakdown bars
@@ -601,7 +728,8 @@ function stats() {
         ["Other", 8, "#6a5572"],
     ];
     const langBar = document.createElement("div");
-    langBar.style.cssText = "display:flex;height:8px;border-radius:4px;overflow:hidden;margin:0 14px 8px;";
+    langBar.style.cssText =
+        "display:flex;height:8px;border-radius:4px;overflow:hidden;margin:0 14px 8px;";
     langs.forEach(([, pct, color]) => {
         const seg = document.createElement("div");
         seg.style.cssText = `width:${pct}%;background:${color};transition:width 0.5s;`;
@@ -610,14 +738,17 @@ function stats() {
     body.appendChild(langBar);
 
     const langLabels = document.createElement("div");
-    langLabels.style.cssText = "display:flex;flex-wrap:wrap;gap:12px;padding-left:14px;margin-bottom:4px;";
+    langLabels.style.cssText =
+        "display:flex;flex-wrap:wrap;gap:12px;padding-left:14px;margin-bottom:4px;";
     langs.forEach(([name, pct, color]) => {
         langLabels.innerHTML += `<span style="font-size:11px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${color};margin-right:4px"></span>${name} <span class="c-dim">${pct}%</span></span>`;
     });
     body.appendChild(langLabels);
 
     blank();
-    line(`  <span class="c-dim">── Contribution Graph ─────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Contribution Graph ─────────────────────</span>`,
+    );
     blank();
 
     const graphWrap = document.createElement("div");
@@ -626,7 +757,9 @@ function stats() {
     body.appendChild(graphWrap);
 
     blank();
-    line(`  <span class="c-dim">── Streak ─────────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Streak ─────────────────────────────────</span>`,
+    );
     blank();
 
     const streakWrap = document.createElement("div");
@@ -635,7 +768,9 @@ function stats() {
     body.appendChild(streakWrap);
 
     blank();
-    line(`  <a href="https://github.com/rohan-unbeg" target="_blank" class="c-blue" style="margin-left:14px">→ Full profile on GitHub ↗</a>`);
+    line(
+        `  <a href="https://github.com/rohan-unbeg" target="_blank" class="c-blue" style="margin-left:14px">→ Full profile on GitHub ↗</a>`,
+    );
     blank();
 }
 
@@ -683,9 +818,13 @@ function contact() {
     });
 
     blank();
-    line(`  <span class="c-dim">── Resume ─────────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Resume ─────────────────────────────────</span>`,
+    );
     blank();
-    line(`  <span class="c-dim">▸</span> <a href="resume.pdf" target="_blank" class="c-blue">📄 View Resume (PDF)</a>  <button onclick="window.open('resume.pdf','_blank')" class="btn-sm" style="font-size:10px;margin-left:6px">open</button>`);
+    line(
+        `  <span class="c-dim">▸</span> <a href="resume.pdf" target="_blank" class="c-blue">📄 View Resume (PDF)</a>  <button onclick="window.open('resume.pdf','_blank')" class="btn-sm" style="font-size:10px;margin-left:6px">open</button>`,
+    );
     blank();
     line(
         `  <span class="c-dim"># Response time: usually within 24 hours</span>`,
@@ -702,7 +841,9 @@ function help() {
     line(`  <span class="section-header">Available Commands</span>`);
     blank();
 
-    line(`  <span class="c-dim">── Portfolio ──────────────────────────────</span>`);
+    line(
+        `  <span class="c-dim">── Portfolio ──────────────────────────────</span>`,
+    );
     blank();
     const cmds = [
         ["menu", "c-orange", "Numbered navigation menu"],
@@ -721,6 +862,7 @@ function help() {
         ["snake", "c-green", "Play Snake game"],
         ["matrix", "c-green", "Matrix rain animation"],
         ["tour", "c-orange", "Replay the guided OS tour"],
+        ["drawer", "c-orange", "Open app drawer (all apps)"],
         ["back", "c-dim", "Return to previous view"],
         ["clear", "c-dim", "Clear terminal"],
     ];
@@ -1019,6 +1161,12 @@ function runCmd(raw) {
             break;
         case "tour":
             startTour();
+            break;
+
+        case "drawer":
+        case "apps":
+            toggleAppDrawer();
+            line(`  <span class="c-dim">Opening app drawer…</span>`);
             break;
 
         case "snake":
@@ -1770,6 +1918,260 @@ const EXPLORER_ICONS = {
     back: '<svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#6a5572" stroke-width="2"><circle cx="12" cy="12" r="10" fill="rgba(106,85,114,0.15)"/><line x1="16" y1="12" x2="8" y2="12"></line><polyline points="11 9 8 12 11 15"></polyline></svg>',
 };
 
+// ── GitHub Pinned Repos for Explorer ─────────────────────────────────────────
+const GITHUB_PINNED_REPOS = [
+    { name: "autonomous-ai-maintainer", desc: "Dual-engine AI codebase maintainer (Gemini & Groq). Auto-scans repos, generates fixes, opens PRs.", lang: "Python",     color: "#3572A5", url: "https://github.com/rohan-unbeg/autonomous-ai-maintainer", badge: "⭐ Featured" },
+    { name: "sugarsync-mcode",          desc: "Hackathon-winning gamified glucose health tracker. Real-time data + gamification layer.",           lang: "TypeScript", color: "#3178c6", url: "https://github.com/rohan-unbeg/sugarsync-mcode",          badge: "🏆 Winner"   },
+    { name: "portfolio-cli-style",      desc: "This very portfolio — Ubuntu OS simulation in vanilla JS. Terminal, GUI windows, TMDB watchlist.",  lang: "JavaScript", color: "#f1e05a", url: "https://github.com/rohan-unbeg/portfolio-cli-style",      badge: "🖥️ Live"     },
+    { name: "oppia",                    desc: "Open-source interactive learning platform. Contributed frontend accessibility & UX improvements.",  lang: "TypeScript", color: "#3178c6", url: "https://github.com/oppia/oppia",                          badge: "🤝 OSS"      },
+];
+
+// ── Text Editor Window ────────────────────────────────────────────────────────
+window.openTextEditor = function(filename, content, lang) {
+    const winId = "texteditor-" + filename.replace(/[^a-z0-9]/gi, "-");
+    // If already open, bring to front
+    const existing = document.querySelector('[data-app-id="' + winId + '"]');
+    if (existing && !existing.classList.contains("closed")) {
+        zIndexCounter++;
+        existing.style.zIndex = zIndexCounter;
+        existing.classList.remove("minimized");
+        existing.style.transform = "";
+        existing.style.opacity = "1";
+        existing.style.pointerEvents = "all";
+        return;
+    }
+    const ext = filename.split(".").pop().toLowerCase();
+    const langColors = { py:"#3572A5", js:"#f1e05a", ts:"#3178c6", md:"#0ea5e9", json:"#e9b96e", txt:"#aaa", html:"#e44d26", css:"#264de4", sh:"#4ac94a" };
+    const langColor = langColors[ext] || "#aaa";
+    // Line numbers + syntax highlight (basic)
+    const lines = (content || "").split("\n");
+    const numbered = lines.map((l, i) =>
+        `<span class="te-line"><span class="te-ln">${i+1}</span><span class="te-code">${escHtml(l) || " "}</span></span>`
+    ).join("\n");
+    const win = document.createElement("div");
+    win.className = "os-window";
+    win.dataset.appId = winId;
+    win.style.cssText = "width:640px;height:480px;left:" + (100 + Math.random()*80) + "px;top:" + (60 + Math.random()*60) + "px;";
+    win.innerHTML = `
+        <div class="os-window-header">
+            <div class="window-controls">
+                <div class="w-dot close" onclick="this.closest('.os-window').classList.add('closed')" title="Close"></div>
+                <div class="w-dot min" title="Minimize"></div>
+                <div class="w-dot max" title="Maximize"></div>
+            </div>
+            <div class="t-title">
+                <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${langColor};margin-right:6px;vertical-align:middle;"></span>
+                ${escHtml(filename)}
+            </div>
+        </div>
+        <div class="os-window-body" style="overflow:auto;padding:0;background:#0d1117;font-family:'Ubuntu Mono',monospace;font-size:12px;line-height:1.6;cursor:text;user-select:text;">
+            <pre class="te-pre">${numbered}</pre>
+        </div>`;
+    document.querySelector(".wrapper").appendChild(win);
+    zIndexCounter++;
+    win.style.zIndex = zIndexCounter;
+    makeDraggable(win, win.querySelector(".os-window-header"));
+    makeResizable(win);
+    // Minimize/Maximize wiring
+    win.querySelector(".w-dot.min").onclick = () => {
+        win.style.opacity = "0.2";
+        win.style.pointerEvents = "none";
+        win.style.transform = "scale(0.05) translateY(200px)";
+        win.classList.add("minimized");
+    };
+    win.querySelector(".w-dot.max").onclick = () => {
+        if (win.dataset.maxed === "1") {
+            win.style.cssText = win.dataset.prevCss || win.style.cssText;
+            delete win.dataset.maxed;
+        } else {
+            win.dataset.prevCss = win.style.cssText;
+            win.style.cssText = "position:absolute;left:0;top:0;width:100%;height:calc(100% - 32px);z-index:" + (++zIndexCounter) + ";";
+            win.dataset.maxed = "1";
+        }
+    };
+};
+
+// ── GitHub Tree Visualizer ────────────────────────────────────────────────────
+const _ghTreeCache = {};
+window._ghfcCounter = 0; // counter for file content cache keys
+
+window.openGithubTree = function(owner, repo) {
+    const repoKey = owner + "/" + repo;
+    const winId = "ghtree-" + repo;
+    const existing = document.querySelector('[data-app-id="' + winId + '"]');
+    if (existing && !existing.classList.contains("closed")) {
+        zIndexCounter++;
+        existing.style.zIndex = zIndexCounter;
+        existing.classList.remove("minimized");
+        existing.style.transform = "";
+        existing.style.opacity = "1";
+        existing.style.pointerEvents = "all";
+        return;
+    }
+    const win = document.createElement("div");
+    win.className = "os-window";
+    win.dataset.appId = winId;
+    win.style.cssText = "width:720px;height:500px;left:" + (80 + Math.random()*80) + "px;top:" + (50 + Math.random()*60) + "px;";
+    win.innerHTML = `
+        <div class="os-window-header">
+            <div class="window-controls">
+                <div class="w-dot close" onclick="this.closest('.os-window').classList.add('closed')" title="Close"></div>
+                <div class="w-dot min" title="Minimize"></div>
+                <div class="w-dot max" title="Maximize"></div>
+            </div>
+            <div class="t-title">
+                <svg viewBox="0 0 16 16" width="14" height="14" style="vertical-align:middle;margin-right:6px;fill:#aaa"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                ${escHtml(owner)}/<strong>${escHtml(repo)}</strong>
+            </div>
+        </div>
+        <div class="os-window-body" id="ghtree-body-${winId}" style="display:flex;overflow:hidden;padding:0;background:#0d1117;">
+            <div class="ghtree-loading" style="padding:24px;color:var(--dim);font-family:'Ubuntu Mono',monospace;font-size:13px;">⏳ Fetching repository tree…</div>
+        </div>`;
+    document.querySelector(".wrapper").appendChild(win);
+    zIndexCounter++;
+    win.style.zIndex = zIndexCounter;
+    makeDraggable(win, win.querySelector(".os-window-header"));
+    makeResizable(win);
+    win.querySelector(".w-dot.min").onclick = () => {
+        win.style.opacity = "0.2"; win.style.pointerEvents = "none";
+        win.style.transform = "scale(0.05) translateY(200px)"; win.classList.add("minimized");
+    };
+    win.querySelector(".w-dot.max").onclick = () => {
+        if (win.dataset.maxed === "1") { win.style.cssText = win.dataset.prevCss; delete win.dataset.maxed; }
+        else { win.dataset.prevCss = win.style.cssText; win.style.cssText = "position:absolute;left:0;top:0;width:100%;height:calc(100% - 32px);z-index:" + (++zIndexCounter) + ";"; win.dataset.maxed = "1"; }
+    };
+    // Fetch tree
+    _fetchGHTree(owner, repo, winId);
+};
+
+async function _fetchGHTree(owner, repo, winId) {
+    const bodyEl = document.getElementById("ghtree-body-" + winId);
+    if (!bodyEl) return;
+    const cacheKey = owner + "/" + repo;
+    try {
+        let treeData;
+        if (_ghTreeCache[cacheKey]) {
+            treeData = _ghTreeCache[cacheKey];
+        } else {
+            // First get default branch
+            const repoRes = await fetch("https://api.github.com/repos/" + owner + "/" + repo);
+            if (!repoRes.ok) throw new Error("Repo not found");
+            const repoJson = await repoRes.json();
+            const branch = repoJson.default_branch || "main";
+            const treeRes = await fetch("https://api.github.com/repos/" + owner + "/" + repo + "/git/trees/" + branch + "?recursive=1");
+            if (!treeRes.ok) throw new Error("Tree fetch failed");
+            const treeJson = await treeRes.json();
+            treeData = treeJson.tree || [];
+            _ghTreeCache[cacheKey] = treeData;
+        }
+        _renderGHTree(owner, repo, treeData, bodyEl, winId);
+    } catch(err) {
+        bodyEl.innerHTML = '<div style="padding:24px;color:#ef4444;font-family:\'Ubuntu Mono\',monospace;font-size:13px;">❌ ' + escHtml(err.message) + '<br><br><a href="https://github.com/' + owner + '/' + repo + '" target="_blank" style="color:#729fcf">Open on GitHub ↗</a></div>';
+    }
+}
+
+function _renderGHTree(owner, repo, tree, bodyEl, winId) {
+    // Build tree structure
+    const root = { name: repo, type: "tree", children: {}, path: "" };
+    tree.forEach(node => {
+        const parts = node.path.split("/");
+        let cur = root;
+        parts.forEach((part, idx) => {
+            if (!cur.children[part]) {
+                cur.children[part] = { name: part, type: idx === parts.length - 1 ? node.type : "tree", children: {}, path: node.path, sha: node.sha, size: node.size, fullPath: node.path };
+            }
+            cur = cur.children[part];
+        });
+    });
+
+    let selectedFile = null;
+
+    function treeNode(node, depth) {
+        const sortedKeys = Object.keys(node.children).sort((a, b) => {
+            const aDir = node.children[a].type === "tree";
+            const bDir = node.children[b].type === "tree";
+            if (aDir && !bDir) return -1;
+            if (!aDir && bDir) return 1;
+            return a.localeCompare(b);
+        });
+        return sortedKeys.map(key => {
+            const child = node.children[key];
+            const isDir = child.type === "tree";
+            const indent = depth * 16;
+            const ext = key.split(".").pop().toLowerCase();
+            const fileIconColor = { py:"#3572A5", js:"#f1e05a", ts:"#3178c6", md:"#0ea5e9", json:"#e9b96e", html:"#e44d26", css:"#264de4", sh:"#4ac94a" }[ext] || "#8b949e";
+            const icon = isDir
+                ? `<svg viewBox="0 0 16 16" width="14" height="14" style="fill:#e9b96e;flex-shrink:0"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5L6.13 1.561A1.75 1.75 0 0 0 4.87 1H1.75z"/></svg>`
+                : `<svg viewBox="0 0 16 16" width="14" height="14" style="fill:${fileIconColor};flex-shrink:0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25V1.75z"/></svg>`;
+            const nodeId = "ghn-" + winId + "-" + (child.fullPath || key).replace(/[^a-z0-9]/gi, "_");
+            if (isDir) {
+                const childrenHtml = treeNode(child, depth + 1);
+                return `<details class="ghtree-dir" id="${nodeId}">
+                    <summary class="ghtree-item" style="padding-left:${8 + indent}px">${icon}<span>${escHtml(key)}</span></summary>
+                    ${childrenHtml}
+                </details>`;
+            } else {
+                return `<div class="ghtree-item ghtree-file" id="${nodeId}" style="padding-left:${8 + indent}px" onclick="ghTreeOpenFile('${escHtml(owner)}','${escHtml(repo)}','${escHtml(child.fullPath)}','${escHtml(key)}')">${icon}<span>${escHtml(key)}</span></div>`;
+            }
+        }).join("");
+    }
+
+    const treeHtml = treeNode(root, 0);
+    bodyEl.innerHTML = `
+        <div class="ghtree-sidebar">
+            <div class="ghtree-repo-header">
+                <span style="color:var(--dim);font-size:11px">📁 ${escHtml(repo)}</span>
+                <a href="https://github.com/${escHtml(owner)}/${escHtml(repo)}" target="_blank" class="ghtree-gh-link">↗</a>
+            </div>
+            <div class="ghtree-list">${treeHtml}</div>
+        </div>
+        <div class="ghtree-preview" id="ghtree-preview-${winId}">
+            <div style="padding:24px;color:var(--dim);font-size:12px;font-family:'Ubuntu Mono',monospace;">Click a file to preview its contents</div>
+        </div>`;
+}
+
+window.ghTreeOpenFile = async function(owner, repo, filePath, filename) {
+    // Find the preview panel in the most recently focused ghtree window
+    const allPreviews = document.querySelectorAll('[id^="ghtree-preview-"]');
+    const previewEl = allPreviews[allPreviews.length - 1];
+    if (!previewEl) return;
+    previewEl.innerHTML = '<div style="padding:24px;color:var(--dim);font-size:12px;font-family:\'Ubuntu Mono\',monospace;">⏳ Loading ' + escHtml(filename) + '…</div>';
+    try {
+        const res = await fetch("https://api.github.com/repos/" + owner + "/" + repo + "/contents/" + filePath.split("/").map(encodeURIComponent).join("/"));
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const json = await res.json();
+        if (json.encoding === "base64") {
+            // Decode UTF-8 safe
+            const raw = json.content.replace(/\n/g, "");
+            let content;
+            try { content = decodeURIComponent(escape(atob(raw))); }
+            catch(e) { content = atob(raw); }
+            // Store in global cache with unique key
+            const cacheKey = "_ghfc_" + (++window._ghfcCounter);
+            window[cacheKey] = content;
+            const ext = filename.split(".").pop().toLowerCase();
+            const lines = content.split("\n");
+            const numbered = lines.map((l, i) =>
+                `<span class="te-line"><span class="te-ln">${i+1}</span><span class="te-code">${escHtml(l) || " "}</span></span>`
+            ).join("\n");
+            const langColors = { py:"#3572A5", js:"#f1e05a", ts:"#3178c6", md:"#0ea5e9", json:"#e9b96e", txt:"#aaa", html:"#e44d26", css:"#264de4", sh:"#4ac94a" };
+            const langColor = langColors[ext] || "#aaa";
+            previewEl.innerHTML = `
+                <div class="ghtree-file-header">
+                    <span style="display:inline-block;width:9px;height:9px;border-radius:2px;background:${langColor};margin-right:6px;"></span>
+                    <span>${escHtml(filename)}</span>
+                    <span style="color:var(--dim);font-size:11px;margin-left:auto;">${lines.length} lines</span>
+                    <button class="ghtree-open-editor" onclick="openTextEditor(${JSON.stringify(filename)}, window[${JSON.stringify(cacheKey)}], ${JSON.stringify(ext)})">Open in Editor</button>
+                </div>
+                <pre class="te-pre" style="overflow:auto;max-height:calc(100% - 42px);margin:0;">${numbered}</pre>`;
+        } else if (json.download_url) {
+            previewEl.innerHTML = `<div style="padding:24px;font-family:'Ubuntu Mono',monospace;font-size:12px;color:var(--dim);">Binary file — <a href="${escHtml(json.download_url)}" target="_blank" style="color:#729fcf">Download ↗</a></div>`;
+        }
+    } catch(err) {
+        previewEl.innerHTML = '<div style="padding:24px;color:#ef4444;font-size:12px;font-family:\'Ubuntu Mono\',monospace;">❌ ' + escHtml(err.message) + '</div>';
+    }
+};
+
 window.renderExplorer = function (path) {
     const contentEl = document.getElementById("explorer-content");
     if (!contentEl) return;
@@ -1778,65 +2180,60 @@ window.renderExplorer = function (path) {
     let items = [];
     if (path === "~") {
         items = [
-            {
-                name: "projects",
-                icon: I.folder,
-                type: "dir",
-                path: "~/projects",
-            },
-            {
-                name: "About Me",
-                icon: I.about,
-                type: "file",
-                cmd: "openGuiViewer('about')",
-            },
-            {
-                name: "Skills",
-                icon: I.skills,
-                type: "file",
-                cmd: "openGuiViewer('skills')",
-            },
-            {
-                name: "Experience",
-                icon: I.exp,
-                type: "file",
-                cmd: "openGuiViewer('experience')",
-            },
-            {
-                name: "Contact",
-                icon: I.contact,
-                type: "file",
-                cmd: "openGuiViewer('contact')",
-            },
-            {
-                name: "Resume.pdf",
-                icon: I.pdf,
-                type: "file",
-                cmd: "openApp('pdf')",
-            },
+            { name: "projects",    icon: I.folder,  type: "dir",  path: "~/projects" },
+            { name: "About Me",    icon: I.about,   type: "file", cmd: "openGuiViewer('about')" },
+            { name: "Skills",      icon: I.skills,  type: "file", cmd: "openGuiViewer('skills')" },
+            { name: "Experience",  icon: I.exp,     type: "file", cmd: "openGuiViewer('experience')" },
+            { name: "Contact",     icon: I.contact, type: "file", cmd: "openGuiViewer('contact')" },
+            { name: "Resume.pdf",  icon: I.pdf,     type: "file", cmd: "openApp('pdf')" },
         ];
     } else if (path === "~/projects") {
-        items = [
-            { name: "..", icon: I.back, type: "dir", path: "~" },
-            {
-                name: "SugarSync",
-                icon: I.phone,
-                type: "file",
-                cmd: "openApp('sugarsync')",
-            },
-            {
-                name: "AI Maintainer",
-                icon: I.robot,
-                type: "file",
-                cmd: "openGuiViewer('ai-maintainer')",
-            },
-            {
-                name: "GitHub Stats",
-                icon: I.stats,
-                type: "file",
-                cmd: "openGuiViewer('stats')",
-            },
-        ];
+        // Render GitHub pinned project cards instead of icon grid
+        const backBtn = `<div class="explorer-icon" onclick="renderExplorer('~')"><div class="explorer-icon-img">${I.back}</div><div class="explorer-icon-name">..</div></div>`;
+        const cards = GITHUB_PINNED_REPOS.map(r => {
+            const isExternal = r.url.includes("github.com/oppia");
+            const treeAction = isExternal ? "window.open('" + r.url + "','_blank')" : "openGithubTree('rohan-unbeg','" + r.name + "')";
+            const langDot = `<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${r.color};margin-right:5px;vertical-align:middle;"></span>`;
+            return `<div class="explorer-repo-card">
+                <div class="explorer-repo-header">
+                    <svg viewBox="0 0 16 16" width="14" height="14" style="fill:#8b949e;flex-shrink:0;margin-right:6px"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8V1.5Z"/></svg>
+                    <span class="explorer-repo-name" onclick="${treeAction}">${escHtml(r.name)}</span>
+                    <span class="explorer-repo-badge">${r.badge}</span>
+                    <a href="${r.url}" target="_blank" class="explorer-repo-gh-link" title="Open on GitHub">↗</a>
+                </div>
+                <div class="explorer-repo-desc">${escHtml(r.desc)}</div>
+                <div class="explorer-repo-footer">
+                    ${langDot}<span style="font-size:11px;color:var(--dim)">${escHtml(r.lang)}</span>
+                    ${isExternal ? '' : '<button class="explorer-repo-tree-btn" onclick="' + treeAction + '">🌲 Browse Files</button>'}
+                </div>
+            </div>`;
+        }).join("");
+        contentEl.style.flexWrap = "wrap";
+        contentEl.style.flexDirection = "column";
+        contentEl.innerHTML = `<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px">${backBtn}</div><div class="explorer-repo-grid">${cards}</div>`;
+        // Update breadcrumb
+        const explorerWin = apps.explorer && apps.explorer.el;
+        if (explorerWin) {
+            const titleEl = explorerWin.querySelector(".t-title");
+            if (titleEl) titleEl.textContent = "File Explorer — ~/projects";
+        }
+        return;
+    } else if (path === "~/stats") {
+        contentEl.style.flexWrap = "wrap";
+        contentEl.style.flexDirection = "row";
+        contentEl.innerHTML = `
+            <div style="width:100%;padding:4px 0 12px;color:var(--prompt);font-family:'Ubuntu Mono',monospace;font-size:13px;font-weight:bold;">GitHub Stats</div>
+            <div style="width:100%;display:flex;flex-direction:column;gap:10px;">
+                <img src="https://ghchart.rshah.org/e95420/rohan-unbeg" style="max-width:100%;border-radius:6px;border:1px solid var(--border);" />
+                <img src="https://streak-stats.demolab.com?user=rohan-unbeg&theme=dark&hide_border=true&background=160e1e&ring=e95420&fire=e95420&currStreakLabel=eeeeec" style="max-width:100%;border-radius:6px;border:1px solid var(--border);" />
+                <img src="https://github-readme-stats.vercel.app/api?username=rohan-unbeg&show_icons=true&theme=dark&hide_border=true&bg_color=160e1e&title_color=e95420&icon_color=e9b96e" style="max-width:100%;border-radius:6px;border:1px solid var(--border);" />
+            </div>`;
+        const explorerWin = apps.explorer && apps.explorer.el;
+        if (explorerWin) {
+            const titleEl = explorerWin.querySelector(".t-title");
+            if (titleEl) titleEl.textContent = "File Explorer — ~/stats";
+        }
+        return;
     }
 
     let html = "";
@@ -1855,10 +2252,12 @@ window.renderExplorer = function (path) {
             "</div>" +
             "</div>";
     });
+    contentEl.style.flexWrap = "wrap";
+    contentEl.style.flexDirection = "row";
     contentEl.innerHTML = html;
 
     // Update breadcrumb title
-    const explorerWin = apps.explorer.el;
+    const explorerWin = apps.explorer && apps.explorer.el;
     if (explorerWin) {
         const titleEl = explorerWin.querySelector(".t-title");
         if (titleEl) titleEl.textContent = "File Explorer — " + path;
@@ -1991,22 +2390,63 @@ function renderGuiContent(view, container) {
     } else if (view === "skills") {
         // tier: 4=daily driver, 3=proficient, 2=familiar, 1=learning
         const skills = [
-            ["Python",      "#4ac94a", 4, "Daily driver — backend, scripting, pipelines"],
-            ["TypeScript",  "#729fcf", 4, "Daily driver — Angular, Node.js, full-stack"],
-            ["JavaScript",  "#e9b96e", 3, "Proficient — DOM, vanilla JS, this portfolio"],
-            ["Angular",     "#dd0031", 3, "Proficient — Oppia's frontend stack, RxJS"],
-            ["Node.js",     "#6da55f", 3, "Proficient — REST APIs, Express"],
-            ["CI/CD",       "#4ac94a", 3, "Proficient — GitHub Actions, CircleCI"],
-            ["React",       "#61dafb", 2, "Familiar — personal projects, hooks"],
-            ["GCP",         "#4285f4", 2, "Familiar — App Engine, Cloud Functions"],
-            ["Apache Beam", "#e67e22", 2, "Familiar — batch data processing jobs"],
-            ["Docker",      "#0db7ed", 2, "Familiar — containerization, dev envs"],
-            ["PostgreSQL",  "#336791", 2, "Familiar — relational queries, schema design"],
-            ["MongoDB",     "#4ea94b", 2, "Familiar — document stores, aggregation"],
+            [
+                "Python",
+                "#4ac94a",
+                4,
+                "Daily driver — backend, scripting, pipelines",
+            ],
+            [
+                "TypeScript",
+                "#729fcf",
+                4,
+                "Daily driver — Angular, Node.js, full-stack",
+            ],
+            [
+                "JavaScript",
+                "#e9b96e",
+                3,
+                "Proficient — DOM, vanilla JS, this portfolio",
+            ],
+            [
+                "Angular",
+                "#dd0031",
+                3,
+                "Proficient — Oppia's frontend stack, RxJS",
+            ],
+            ["Node.js", "#6da55f", 3, "Proficient — REST APIs, Express"],
+            ["CI/CD", "#4ac94a", 3, "Proficient — GitHub Actions, CircleCI"],
+            ["React", "#61dafb", 2, "Familiar — personal projects, hooks"],
+            ["GCP", "#4285f4", 2, "Familiar — App Engine, Cloud Functions"],
+            [
+                "Apache Beam",
+                "#e67e22",
+                2,
+                "Familiar — batch data processing jobs",
+            ],
+            ["Docker", "#0db7ed", 2, "Familiar — containerization, dev envs"],
+            [
+                "PostgreSQL",
+                "#336791",
+                2,
+                "Familiar — relational queries, schema design",
+            ],
+            [
+                "MongoDB",
+                "#4ea94b",
+                2,
+                "Familiar — document stores, aggregation",
+            ],
         ];
-        const tierLabel = ["", "Learning", "Familiar", "Proficient", "Daily driver"];
+        const tierLabel = [
+            "",
+            "Learning",
+            "Familiar",
+            "Proficient",
+            "Daily driver",
+        ];
         const tierColor = ["", "#6a5572", "#729fcf", "#4ac94a", "#e95420"];
-        const tierBar   = ["", "█░░░", "██░░", "███░", "████"];
+        const tierBar = ["", "█░░░", "██░░", "███░", "████"];
         container.innerHTML =
             '<h2 style="color:var(--prompt);margin-bottom:4px">Tech Stack</h2>' +
             '<p style="color:var(--dim);font-size:11px;margin-bottom:16px">████ Daily driver · ███░ Proficient · ██░░ Familiar · █░░░ Learning</p>' +
@@ -2014,11 +2454,23 @@ function renderGuiContent(view, container) {
                 .map(function (s) {
                     return (
                         '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:6px 10px;background:rgba(255,255,255,0.03);border-radius:6px">' +
-                        '<span style="width:110px;font-size:12px;flex-shrink:0">' + s[0] + '</span>' +
-                        '<span style="color:' + s[1] + ';font-family:monospace;letter-spacing:2px;font-size:13px;width:50px;flex-shrink:0">' + tierBar[s[2]] + '</span>' +
-                        '<span style="color:' + tierColor[s[2]] + ';font-size:10px;width:90px;flex-shrink:0">' + tierLabel[s[2]] + '</span>' +
-                        '<span style="color:var(--dim);font-size:10px">' + s[3] + '</span>' +
-                        '</div>'
+                        '<span style="width:110px;font-size:12px;flex-shrink:0">' +
+                        s[0] +
+                        "</span>" +
+                        '<span style="color:' +
+                        s[1] +
+                        ';font-family:monospace;letter-spacing:2px;font-size:13px;width:50px;flex-shrink:0">' +
+                        tierBar[s[2]] +
+                        "</span>" +
+                        '<span style="color:' +
+                        tierColor[s[2]] +
+                        ';font-size:10px;width:90px;flex-shrink:0">' +
+                        tierLabel[s[2]] +
+                        "</span>" +
+                        '<span style="color:var(--dim);font-size:10px">' +
+                        s[3] +
+                        "</span>" +
+                        "</div>"
                     );
                 })
                 .join("");
@@ -2160,7 +2612,11 @@ const WATCHLIST_DATA = {
         { t: "Interstellar", y: 2014, genre: "Sci-Fi/Drama" },
         { t: "Black Swan", y: 2010, genre: "Psychological Thriller" },
         { t: "Whiplash", y: 2014, genre: "Drama/Music" },
-        { t: "Eternal Sunshine of the Spotless Mind", y: 2004, genre: "Romance/Sci-Fi" },
+        {
+            t: "Eternal Sunshine of the Spotless Mind",
+            y: 2004,
+            genre: "Romance/Sci-Fi",
+        },
         { t: "Oldboy", y: 2003, genre: "Mystery/Thriller" },
         { t: "The Kissing Booth", y: 2018, genre: "Romance/Comedy" },
         { t: "Rocky", y: 1976, genre: "Sports/Drama" },
@@ -2177,7 +2633,11 @@ const WATCHLIST_DATA = {
         { t: "The Wolf of Wall Street", y: 2013, genre: "Crime/Drama" },
         { t: "Man of Steel", y: 2013, genre: "Action/Superhero" },
         { t: "Spider-Man", y: 2002, genre: "Superhero" },
-        { t: "Spider-Man Into the Spider-Verse", y: 2018, genre: "Animation/Superhero" },
+        {
+            t: "Spider-Man Into the Spider-Verse",
+            y: 2018,
+            genre: "Animation/Superhero",
+        },
         { t: "Spider-Man No Way Home", y: 2021, genre: "Superhero" },
         { t: "Iron Man", y: 2008, genre: "Superhero" },
         { t: "Thor Ragnarok", y: 2017, genre: "Superhero" },
@@ -2241,7 +2701,11 @@ const WATCHLIST_DATA = {
         { t: "Ip Man 4 The Finale", y: 2019, genre: "Martial Arts" },
         { t: "Master Z Ip Man Legacy", y: 2018, genre: "Martial Arts" },
         { t: "Kung Fu Yoga", y: 2017, genre: "Martial Arts/Comedy" },
-        { t: "Undisputed II Last Man Standing", y: 2006, genre: "Martial Arts" },
+        {
+            t: "Undisputed II Last Man Standing",
+            y: 2006,
+            genre: "Martial Arts",
+        },
         { t: "Drunken Master", y: 1978, genre: "Martial Arts" },
         { t: "Snake in the Eagle's Shadow", y: 1978, genre: "Martial Arts" },
         { t: "Ong Bak", y: 2003, genre: "Martial Arts/Action" },
@@ -2342,7 +2806,12 @@ const WATCHLIST_DATA = {
         { t: "URI The Surgical Strike", y: 2019, genre: "War/Action" },
         { t: "Sam Bahadur", y: 2023, genre: "War/Biography" },
         { t: "Sardar Udham", y: 2021, genre: "Historical/Drama" },
-        { t: "Scam 1992 Harshad Mehta", y: 2020, genre: "Biographical/Drama", tmdbType: "tv" },
+        {
+            t: "Scam 1992 Harshad Mehta",
+            y: 2020,
+            genre: "Biographical/Drama",
+            tmdbType: "tv",
+        },
         { t: "Gully Boy", y: 2019, genre: "Drama/Music" },
         { t: "Barfi", y: 2012, genre: "Romance/Comedy" },
         { t: "Rockstar", y: 2011, genre: "Drama/Music" },
@@ -2376,84 +2845,230 @@ const WATCHLIST_DATA = {
         { t: "ABCD Any Body Can Dance", y: 2013, genre: "Dance/Drama" },
         { t: "Shiddat", y: 2021, genre: "Romance/Drama" },
         { t: "Table No. 21", y: 2013, genre: "Thriller" },
-        { t: "Psycho Raman Raman Raghav 2.0", y: 2016, genre: "Crime/Thriller" },
+        {
+            t: "Psycho Raman Raman Raghav 2.0",
+            y: 2016,
+            genre: "Crime/Thriller",
+        },
         { t: "Blackmail", y: 2018, genre: "Dark Comedy/Thriller" },
         { t: "Freddy", y: 2022, genre: "Thriller" },
         { t: "Thackeray", y: 2019, genre: "Biography/Drama" },
         { t: "Munna Michael", y: 2017, genre: "Dance/Action" },
-        { t: "Teri Baaton Mein Aisa Uljha Jiya", y: 2024, genre: "Romance/Sci-Fi" },
-        { t: "Kartik Calling Kartik", y: 2010, genre: "Psychological Thriller" },
+        {
+            t: "Teri Baaton Mein Aisa Uljha Jiya",
+            y: 2024,
+            genre: "Romance/Sci-Fi",
+        },
+        {
+            t: "Kartik Calling Kartik",
+            y: 2010,
+            genre: "Psychological Thriller",
+        },
         { t: "Zero Bollywood", y: 2018, genre: "Romance/Drama" },
         { t: "Ra.One", y: 2011, genre: "Sci-Fi/Action" },
         { t: "Bhavesh Joshi Superhero", y: 2018, genre: "Superhero/Action" },
         { t: "A Flying Jatt", y: 2016, genre: "Superhero/Action" },
         { t: "Mela", y: 2000, genre: "Action/Drama" },
         { t: "Rowdy Rathore", y: 2012, genre: "Action/Comedy" },
-        { t: "Holiday A Soldier Is Never Off Duty", y: 2014, genre: "Action/Thriller" },
+        {
+            t: "Holiday A Soldier Is Never Off Duty",
+            y: 2014,
+            genre: "Action/Thriller",
+        },
         { t: "Kesari", y: 2019, genre: "War/Drama" },
         { t: "Boss", y: 2013, genre: "Action/Drama" },
         { t: "Khiladi 786", y: 2012, genre: "Action/Comedy" },
         { t: "Desi Boyz", y: 2011, genre: "Comedy/Drama" },
     ],
     tvshows: [
-        { t: "Game of Thrones", y: 2011, genre: "Fantasy/Drama", tmdbType: "tv" },
+        {
+            t: "Game of Thrones",
+            y: 2011,
+            genre: "Fantasy/Drama",
+            tmdbType: "tv",
+        },
         { t: "Breaking Bad", y: 2008, genre: "Crime/Drama", tmdbType: "tv" },
         { t: "Sex Education", y: 2019, genre: "Comedy/Drama", tmdbType: "tv" },
         { t: "Money Heist", y: 2017, genre: "Crime/Thriller", tmdbType: "tv" },
         { t: "Barry", y: 2018, genre: "Dark Comedy", tmdbType: "tv" },
-        { t: "The Boys", y: 2019, genre: "Superhero/Dark Comedy", tmdbType: "tv" },
-        { t: "Squid Game", y: 2021, genre: "Thriller/Survival", tmdbType: "tv" },
-        { t: "Alice in Borderland", y: 2020, genre: "Sci-Fi/Thriller", tmdbType: "tv" },
+        {
+            t: "The Boys",
+            y: 2019,
+            genre: "Superhero/Dark Comedy",
+            tmdbType: "tv",
+        },
+        {
+            t: "Squid Game",
+            y: 2021,
+            genre: "Thriller/Survival",
+            tmdbType: "tv",
+        },
+        {
+            t: "Alice in Borderland",
+            y: 2020,
+            genre: "Sci-Fi/Thriller",
+            tmdbType: "tv",
+        },
         { t: "The Queen's Gambit", y: 2020, genre: "Drama", tmdbType: "tv" },
         { t: "13 Reasons Why", y: 2017, genre: "Drama", tmdbType: "tv" },
         { t: "You", y: 2018, genre: "Psychological Thriller", tmdbType: "tv" },
         { t: "Dexter", y: 2006, genre: "Crime/Thriller", tmdbType: "tv" },
-        { t: "Moon Knight", y: 2022, genre: "Marvel/Superhero", tmdbType: "tv" },
+        {
+            t: "Moon Knight",
+            y: 2022,
+            genre: "Marvel/Superhero",
+            tmdbType: "tv",
+        },
         { t: "Loki", y: 2021, genre: "Marvel/Superhero", tmdbType: "tv" },
         { t: "Mirzapur", y: 2018, genre: "Crime/Drama", tmdbType: "tv" },
         { t: "Bandish Bandits", y: 2020, genre: "Music/Drama", tmdbType: "tv" },
         { t: "The Penguin", y: 2024, genre: "Crime/Drama", tmdbType: "tv" },
         { t: "Taza Khabar", y: 2023, genre: "Comedy/Drama", tmdbType: "tv" },
-        { t: "Prison Break", y: 2005, genre: "Action/Thriller", tmdbType: "tv" },
+        {
+            t: "Prison Break",
+            y: 2005,
+            genre: "Action/Thriller",
+            tmdbType: "tv",
+        },
         { t: "Kota Factory", y: 2019, genre: "Drama", tmdbType: "tv" },
         { t: "The Pitchers", y: 2015, genre: "Startup/Drama", tmdbType: "tv" },
-        { t: "Scam 1992", y: 2020, genre: "Biographical/Drama", tmdbType: "tv" },
+        {
+            t: "Scam 1992",
+            y: 2020,
+            genre: "Biographical/Drama",
+            tmdbType: "tv",
+        },
         { t: "Farzi", y: 2023, genre: "Crime/Thriller", tmdbType: "tv" },
         { t: "TVF Aspirants", y: 2021, genre: "Slice of Life", tmdbType: "tv" },
         { t: "Lupin", y: 2021, genre: "Crime/Mystery", tmdbType: "tv" },
-        { t: "Black Mirror", y: 2011, genre: "Sci-Fi/Anthology", tmdbType: "tv" },
-        { t: "A Knight of the Seven Kingdoms", y: 2024, genre: "Fantasy/Drama", tmdbType: "tv" },
+        {
+            t: "Black Mirror",
+            y: 2011,
+            genre: "Sci-Fi/Anthology",
+            tmdbType: "tv",
+        },
+        {
+            t: "A Knight of the Seven Kingdoms",
+            y: 2024,
+            genre: "Fantasy/Drama",
+            tmdbType: "tv",
+        },
         { t: "12 Angry Men", y: 1957, genre: "Drama/Classic" },
         { t: "Supersex", y: 2024, genre: "Drama", tmdbType: "tv" },
         { t: "CA Topper", y: 2023, genre: "Drama", tmdbType: "tv" },
     ],
     anime: [
-        { t: "Death Note", y: 2006, genre: "Thriller/Psychological", tmdbType: "tv" },
+        {
+            t: "Death Note",
+            y: 2006,
+            genre: "Thriller/Psychological",
+            tmdbType: "tv",
+        },
         { t: "Dororo", y: 2019, genre: "Action/Historical", tmdbType: "tv" },
         { t: "One Punch Man", y: 2015, genre: "Action/Comedy", tmdbType: "tv" },
         { t: "Monster", y: 2004, genre: "Thriller/Mystery", tmdbType: "tv" },
-        { t: "My Dress-Up Darling", y: 2022, genre: "Romance/Slice of Life", tmdbType: "tv" },
-        { t: "Tomodachi Game", y: 2022, genre: "Psychological Thriller", tmdbType: "tv" },
+        {
+            t: "My Dress-Up Darling",
+            y: 2022,
+            genre: "Romance/Slice of Life",
+            tmdbType: "tv",
+        },
+        {
+            t: "Tomodachi Game",
+            y: 2022,
+            genre: "Psychological Thriller",
+            tmdbType: "tv",
+        },
         { t: "Naruto", y: 2002, genre: "Action/Adventure", tmdbType: "tv" },
-        { t: "Naruto Shippuden", y: 2007, genre: "Action/Adventure", tmdbType: "tv" },
-        { t: "Chainsaw Man", y: 2022, genre: "Action/Dark Fantasy", tmdbType: "tv" },
+        {
+            t: "Naruto Shippuden",
+            y: 2007,
+            genre: "Action/Adventure",
+            tmdbType: "tv",
+        },
+        {
+            t: "Chainsaw Man",
+            y: 2022,
+            genre: "Action/Dark Fantasy",
+            tmdbType: "tv",
+        },
         { t: "Lookism", y: 2022, genre: "Action/Drama", tmdbType: "tv" },
-        { t: "Komi Can't Communicate", y: 2021, genre: "Romance/Comedy", tmdbType: "tv" },
-        { t: "ReLIFE", y: 2016, genre: "Romance/Slice of Life", tmdbType: "tv" },
-        { t: "Jujutsu Kaisen", y: 2020, genre: "Action/Dark Fantasy", tmdbType: "tv" },
-        { t: "Solo Leveling", y: 2024, genre: "Action/Fantasy", tmdbType: "tv" },
-        { t: "Devilman Crybaby", y: 2018, genre: "Dark Fantasy/Horror", tmdbType: "tv" },
-        { t: "Classroom of the Elite", y: 2017, genre: "Drama · dropped", tmdbType: "tv" },
-        { t: "Fullmetal Alchemist Brotherhood", y: 2009, genre: "Action/Adventure · dropped", tmdbType: "tv" },
+        {
+            t: "Komi Can't Communicate",
+            y: 2021,
+            genre: "Romance/Comedy",
+            tmdbType: "tv",
+        },
+        {
+            t: "ReLIFE",
+            y: 2016,
+            genre: "Romance/Slice of Life",
+            tmdbType: "tv",
+        },
+        {
+            t: "Jujutsu Kaisen",
+            y: 2020,
+            genre: "Action/Dark Fantasy",
+            tmdbType: "tv",
+        },
+        {
+            t: "Solo Leveling",
+            y: 2024,
+            genre: "Action/Fantasy",
+            tmdbType: "tv",
+        },
+        {
+            t: "Devilman Crybaby",
+            y: 2018,
+            genre: "Dark Fantasy/Horror",
+            tmdbType: "tv",
+        },
+        {
+            t: "Classroom of the Elite",
+            y: 2017,
+            genre: "Drama · dropped",
+            tmdbType: "tv",
+        },
+        {
+            t: "Fullmetal Alchemist Brotherhood",
+            y: 2009,
+            genre: "Action/Adventure · dropped",
+            tmdbType: "tv",
+        },
         { t: "Your Name", y: 2016, genre: "Romance/Fantasy" },
         { t: "A Silent Voice", y: 2016, genre: "Drama/Romance" },
-        { t: "Attack on Titan", y: 2013, genre: "Action/Dark Fantasy", tmdbType: "tv" },
-        { t: "Tokyo Revengers", y: 2021, genre: "Action/Drama", tmdbType: "tv" },
+        {
+            t: "Attack on Titan",
+            y: 2013,
+            genre: "Action/Dark Fantasy",
+            tmdbType: "tv",
+        },
+        {
+            t: "Tokyo Revengers",
+            y: 2021,
+            genre: "Action/Drama",
+            tmdbType: "tv",
+        },
         { t: "Erased", y: 2016, genre: "Mystery/Thriller", tmdbType: "tv" },
-        { t: "Summertime Rendering", y: 2022, genre: "Mystery/Thriller", tmdbType: "tv" },
-        { t: "Baki Hanma", y: 2021, genre: "Action/Martial Arts", tmdbType: "tv" },
+        {
+            t: "Summertime Rendering",
+            y: 2022,
+            genre: "Mystery/Thriller",
+            tmdbType: "tv",
+        },
+        {
+            t: "Baki Hanma",
+            y: 2021,
+            genre: "Action/Martial Arts",
+            tmdbType: "tv",
+        },
         { t: "I Want to Eat Your Pancreas", y: 2018, genre: "Drama/Romance" },
-        { t: "Yamada-kun and the Seven Witches", y: 2015, genre: "Romance/Comedy", tmdbType: "tv" },
+        {
+            t: "Yamada-kun and the Seven Witches",
+            y: 2015,
+            genre: "Romance/Comedy",
+            tmdbType: "tv",
+        },
     ],
 };
 
@@ -2464,17 +3079,22 @@ async function tmdbSearch(item) {
 
     const type = item.tmdbType || "movie";
     const query = encodeURIComponent(item.t);
-    const yearParam = item.y ? `&${type === "movie" ? "year" : "first_air_date_year"}=${item.y}` : "";
+    const yearParam = item.y
+        ? `&${type === "movie" ? "year" : "first_air_date_year"}=${item.y}`
+        : "";
     const url = `https://api.themoviedb.org/3/search/${type}?query=${query}${yearParam}&page=1`;
 
     try {
         const res = await fetch(url, {
             headers: {
-                "Authorization": `Bearer ${TMDB_TOKEN}`,
-                "accept": "application/json",
+                Authorization: `Bearer ${TMDB_TOKEN}`,
+                accept: "application/json",
             },
         });
-        if (!res.ok) { tmdbCache[key] = null; return null; }
+        if (!res.ok) {
+            tmdbCache[key] = null;
+            return null;
+        }
         const data = await res.json();
         const result = data.results && data.results[0] ? data.results[0] : null;
         tmdbCache[key] = result;
@@ -2489,7 +3109,9 @@ async function tmdbSearch(item) {
 function watchlist() {
     blank();
     line(`  <span class="section-header">Rohan's Watched List</span>`);
-    line(`  <span class="c-dim">Everything I've actually watched. Not a recommendation list — a done list.</span>`);
+    line(
+        `  <span class="c-dim">Everything I've actually watched. Not a recommendation list — a done list.</span>`,
+    );
     blank();
 
     const categories = [
@@ -2501,9 +3123,11 @@ function watchlist() {
 
     categories.forEach(([key, label, cls]) => {
         const count = WATCHLIST_DATA[key].length;
-        line(`  <span class="c-dim">── ${label} <span class="c-dim">(${count})</span> ───────────────────────────────</span>`);
+        line(
+            `  <span class="c-dim">── ${label} <span class="c-dim">(${count})</span> ───────────────────────────────</span>`,
+        );
         blank();
-        WATCHLIST_DATA[key].forEach(item => {
+        WATCHLIST_DATA[key].forEach((item) => {
             const row = document.createElement("div");
             row.className = "watchlist-item fade-in";
             row.innerHTML = `
@@ -2514,10 +3138,17 @@ function watchlist() {
         blank();
     });
 
-    const total = Object.values(WATCHLIST_DATA).reduce((s, a) => s + a.length, 0);
-    line(`  <span class="c-dim">── Total: <span class="c-green">${total} titles</span> ─────── <span class="c-blue">Open dock Watchlist for poster view 🎬</span></span>`);
+    const total = Object.values(WATCHLIST_DATA).reduce(
+        (s, a) => s + a.length,
+        0,
+    );
+    line(
+        `  <span class="c-dim">── Total: <span class="c-green">${total} titles</span> ─────── <span class="c-blue">Open dock Watchlist for poster view 🎬</span></span>`,
+    );
     blank();
-    line(`  <span class="c-dim"># Type <span class="c-orange">menu</span> to go back.</span>`);
+    line(
+        `  <span class="c-dim"># Type <span class="c-orange">menu</span> to go back.</span>`,
+    );
     blank();
 }
 
@@ -2526,7 +3157,10 @@ function renderWatchlistApp() {
     const root = document.getElementById("wl-root");
     if (!root) return;
 
-    const total = Object.values(WATCHLIST_DATA).reduce((s, a) => s + a.length, 0);
+    const total = Object.values(WATCHLIST_DATA).reduce(
+        (s, a) => s + a.length,
+        0,
+    );
     const badge = document.getElementById("wl-total-badge");
     if (badge) badge.textContent = total + " titles";
 
@@ -2549,25 +3183,41 @@ function renderWatchlistApp() {
     function buildTabs() {
         tabsEl.innerHTML = "";
         tabDefs.forEach(([key, label]) => {
-            const count = key === "all"
-                ? Object.values(WATCHLIST_DATA).reduce((s, a) => s + a.length, 0)
-                : WATCHLIST_DATA[key].length;
+            const count =
+                key === "all"
+                    ? Object.values(WATCHLIST_DATA).reduce(
+                          (s, a) => s + a.length,
+                          0,
+                      )
+                    : WATCHLIST_DATA[key].length;
             const btn = document.createElement("button");
-            btn.className = "wl-tab" + (key === activeTab ? " wl-tab-active" : "");
+            btn.className =
+                "wl-tab" + (key === activeTab ? " wl-tab-active" : "");
             btn.innerHTML = `${label} <span style="opacity:0.5;font-size:9px">${count}</span>`;
-            btn.onclick = () => { activeTab = key; searchEl.value = ""; searchQ = ""; buildTabs(); renderGrid(); };
+            btn.onclick = () => {
+                activeTab = key;
+                searchEl.value = "";
+                searchQ = "";
+                buildTabs();
+                renderGrid();
+            };
             tabsEl.appendChild(btn);
         });
     }
 
     // Get filtered items
     function getItems() {
-        const items = activeTab === "all"
-            ? Object.values(WATCHLIST_DATA).flat()
-            : WATCHLIST_DATA[activeTab];
+        const items =
+            activeTab === "all"
+                ? Object.values(WATCHLIST_DATA).flat()
+                : WATCHLIST_DATA[activeTab];
         if (!searchQ) return items;
         const q = searchQ.toLowerCase();
-        return items.filter(i => i.t.toLowerCase().includes(q) || (i.genre || "").toLowerCase().includes(q));
+        return items.filter(
+            (i) =>
+                i.t.toLowerCase().includes(q) ||
+                (i.genre || "").toLowerCase().includes(q),
+        );
     }
 
     // Render the grid with TMDB posters
@@ -2593,7 +3243,9 @@ function renderWatchlistApp() {
         const BATCH = 6;
         for (let i = 0; i < items.length; i += BATCH) {
             const batch = items.slice(i, i + BATCH);
-            const results = await Promise.all(batch.map(item => tmdbSearch(item)));
+            const results = await Promise.all(
+                batch.map((item) => tmdbSearch(item)),
+            );
             results.forEach((result, j) => {
                 const item = batch[j];
                 const card = cardEls[i + j];
@@ -2605,18 +3257,27 @@ function renderWatchlistApp() {
     }
 
     function populateCard(card, item, tmdb) {
-        const poster = tmdb && tmdb.poster_path ? TMDB_IMG + tmdb.poster_path : null;
-        const title = tmdb ? (tmdb.title || tmdb.name) : item.t;
-        const year = tmdb ? (tmdb.release_date || tmdb.first_air_date || "").slice(0, 4) : (item.y || "");
-        const rating = tmdb && tmdb.vote_average ? tmdb.vote_average.toFixed(1) : null;
-        const overview = tmdb && tmdb.overview ? tmdb.overview.slice(0, 100) + (tmdb.overview.length > 100 ? "..." : "") : "";
+        const poster =
+            tmdb && tmdb.poster_path ? TMDB_IMG + tmdb.poster_path : null;
+        const title = tmdb ? tmdb.title || tmdb.name : item.t;
+        const year = tmdb
+            ? (tmdb.release_date || tmdb.first_air_date || "").slice(0, 4)
+            : item.y || "";
+        const rating =
+            tmdb && tmdb.vote_average ? tmdb.vote_average.toFixed(1) : null;
+        const overview =
+            tmdb && tmdb.overview
+                ? tmdb.overview.slice(0, 100) +
+                  (tmdb.overview.length > 100 ? "..." : "")
+                : "";
         const dropped = item.genre && item.genre.includes("dropped");
 
         card.innerHTML = `
             <div class="wl-poster-wrap">
-                ${poster
-                    ? `<img class="wl-poster" src="${poster}" alt="${escHtml(title)}" loading="lazy" />`
-                    : `<div class="wl-poster-placeholder"><span>${escHtml(item.t.slice(0,2).toUpperCase())}</span></div>`
+                ${
+                    poster
+                        ? `<img class="wl-poster" src="${poster}" alt="${escHtml(title)}" loading="lazy" />`
+                        : `<div class="wl-poster-placeholder"><span>${escHtml(item.t.slice(0, 2).toUpperCase())}</span></div>`
                 }
                 ${rating ? `<div class="wl-rating">⭐ ${rating}</div>` : ""}
                 ${dropped ? `<div class="wl-dropped">dropped</div>` : ""}
@@ -2640,25 +3301,38 @@ function renderWatchlistApp() {
 
         const type = item.tmdbType || "movie";
         const title = tmdb.title || tmdb.name || item.t;
-        const year = (tmdb.release_date || tmdb.first_air_date || "").slice(0, 4);
+        const year = (tmdb.release_date || tmdb.first_air_date || "").slice(
+            0,
+            4,
+        );
         const poster = tmdb.poster_path ? TMDB_IMG + tmdb.poster_path : null;
-        const backdrop = tmdb.backdrop_path ? `https://image.tmdb.org/t/p/w780${tmdb.backdrop_path}` : null;
+        const backdrop = tmdb.backdrop_path
+            ? `https://image.tmdb.org/t/p/w780${tmdb.backdrop_path}`
+            : null;
         const rating = tmdb.vote_average ? tmdb.vote_average.toFixed(1) : null;
-        const voteCount = tmdb.vote_count ? tmdb.vote_count.toLocaleString() : null;
+        const voteCount = tmdb.vote_count
+            ? tmdb.vote_count.toLocaleString()
+            : null;
         const overview = tmdb.overview || "No overview available.";
         const dropped = item.genre && item.genre.includes("dropped");
-        const genreLabel = item.genre ? item.genre.replace(" · dropped", "") : "";
+        const genreLabel = item.genre
+            ? item.genre.replace(" · dropped", "")
+            : "";
 
         // Show modal with loading state first
         modal.className = "open";
         modal.innerHTML = `
-            ${backdrop
-                ? `<img class="wl-modal-backdrop" src="${backdrop}" alt="" />`
-                : `<div class="wl-modal-backdrop-placeholder"></div>`}
+            ${
+                backdrop
+                    ? `<img class="wl-modal-backdrop" src="${backdrop}" alt="" />`
+                    : `<div class="wl-modal-backdrop-placeholder"></div>`
+            }
             <div class="wl-modal-hero">
-                ${poster
-                    ? `<img class="wl-modal-poster" src="${poster}" alt="${escHtml(title)}" />`
-                    : `<div class="wl-modal-poster-placeholder">${escHtml(item.t.slice(0,2).toUpperCase())}</div>`}
+                ${
+                    poster
+                        ? `<img class="wl-modal-poster" src="${poster}" alt="${escHtml(title)}" />`
+                        : `<div class="wl-modal-poster-placeholder">${escHtml(item.t.slice(0, 2).toUpperCase())}</div>`
+                }
                 <div class="wl-modal-titles">
                     <div class="wl-modal-title">${escHtml(title)}</div>
                     <div class="wl-modal-tagline" id="wl-modal-tagline" style="color:var(--dim);font-size:11px;font-style:italic;margin-bottom:6px"></div>
@@ -2688,17 +3362,26 @@ function renderWatchlistApp() {
 
         // Fetch full detail for runtime, tagline, status
         try {
-            const res = await fetch(`https://api.themoviedb.org/3/${type}/${tmdb.id}`, {
-                headers: { "Authorization": `Bearer ${TMDB_TOKEN}`, "accept": "application/json" }
-            });
+            const res = await fetch(
+                `https://api.themoviedb.org/3/${type}/${tmdb.id}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${TMDB_TOKEN}`,
+                        accept: "application/json",
+                    },
+                },
+            );
             if (res.ok) {
                 const d = await res.json();
                 const taglineEl = document.getElementById("wl-modal-tagline");
                 const runtimeEl = document.getElementById("wl-modal-runtime");
-                const statusEl  = document.getElementById("wl-modal-status");
-                if (taglineEl && d.tagline) taglineEl.textContent = `"${d.tagline}"`;
+                const statusEl = document.getElementById("wl-modal-status");
+                if (taglineEl && d.tagline)
+                    taglineEl.textContent = `"${d.tagline}"`;
                 if (runtimeEl) {
-                    const mins = d.runtime || (d.episode_run_time && d.episode_run_time[0]);
+                    const mins =
+                        d.runtime ||
+                        (d.episode_run_time && d.episode_run_time[0]);
                     runtimeEl.innerHTML = `<span class="wl-modal-stat-label">Runtime</span><span class="wl-modal-stat-value">${mins ? `${mins} min` : "—"}</span>`;
                 }
                 if (statusEl && d.status) {
@@ -2709,12 +3392,19 @@ function renderWatchlistApp() {
                     const chipsEl = modal.querySelector(".wl-modal-chips");
                     if (chipsEl) {
                         const existing = chipsEl.innerHTML;
-                        const genreChips = d.genres.slice(0, 3).map(g =>
-                            `<span class="wl-modal-chip">${escHtml(g.name)}</span>`).join("");
+                        const genreChips = d.genres
+                            .slice(0, 3)
+                            .map(
+                                (g) =>
+                                    `<span class="wl-modal-chip">${escHtml(g.name)}</span>`,
+                            )
+                            .join("");
                         // Replace the plain genre chip with real TMDB genres
                         chipsEl.innerHTML = existing.replace(
-                            genreLabel ? `<span class="wl-modal-chip">${escHtml(genreLabel)}</span>` : "",
-                            genreChips
+                            genreLabel
+                                ? `<span class="wl-modal-chip">${escHtml(genreLabel)}</span>`
+                                : "",
+                            genreChips,
                         );
                     }
                 }
@@ -2728,7 +3418,7 @@ function renderWatchlistApp() {
             searchQ = searchEl.value.trim();
             renderGrid();
         });
-        searchEl.addEventListener("keydown", e => e.stopPropagation());
+        searchEl.addEventListener("keydown", (e) => e.stopPropagation());
     }
 
     buildTabs();
@@ -2780,79 +3470,156 @@ async function boot() {
             await sleep(600);
             startTour();
         }
-    } catch(e) {}
+    } catch (e) {}
 }
 
 function renderDesktopIcons() {
     const container = document.getElementById("desktop-icons");
     if (!container) return;
+    // Consistent icon style: rx=8 rounded square, same as dock
     const items = [
         {
             name: "About Me",
             cmd: "openGuiViewer('about')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="11" r="7" fill="#5eafff"/><ellipse cx="18" cy="28" rx="11" ry="7" fill="#3a7bd5"/></svg>',
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#1e3a5f"/><circle cx="18" cy="13" r="5" fill="#60a5fa"/><path d="M8 28 Q8 21 18 21 Q28 21 28 28" fill="#3b82f6"/></svg>',
         },
         {
             name: "Projects",
-            cmd: "openApp('explorer')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><path d="M3 9 Q3 5 7 5 L14 5 L16 8 L30 8 Q33 8 33 12 L33 28 Q33 31 30 31 L6 31 Q3 31 3 28 Z" fill="#f5c518"/><path d="M3 12 L33 12 L33 28 Q33 31 30 31 L6 31 Q3 31 3 28 Z" fill="#ffd740"/></svg>',
+            cmd: "toggleApp('explorer')",
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#92400e"/><path d="M6 14 Q6 10 10 10 L15 10 L17 13 L28 13 Q30 13 30 15 L30 28 Q30 30 28 30 L8 30 Q6 30 6 28 Z" fill="#fbbf24"/><path d="M6 17 L30 17 L30 28 Q30 30 28 30 L8 30 Q6 30 6 28 Z" fill="#fde68a"/></svg>',
         },
         {
             name: "Skills",
             cmd: "openGuiViewer('skills')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect x="4" y="20" width="6" height="12" rx="1" fill="#e95420"/><rect x="13" y="13" width="6" height="19" rx="1" fill="#7c3aed"/><rect x="22" y="8" width="6" height="24" rx="1" fill="#059669"/><rect x="31" y="16" width="4" height="16" rx="1" fill="#f59e0b"/></svg>',
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#1e1b4b"/><rect x="5" y="22" width="5" height="10" rx="2" fill="#e95420"/><rect x="13" y="16" width="5" height="16" rx="2" fill="#7c3aed"/><rect x="21" y="11" width="5" height="21" rx="2" fill="#059669"/><rect x="29" y="18" width="4" height="14" rx="2" fill="#f59e0b"/></svg>',
         },
         {
             name: "Experience",
             cmd: "openGuiViewer('experience')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect x="4" y="14" width="28" height="18" rx="3" fill="#7c3aed"/><rect x="12" y="10" width="12" height="6" rx="2" fill="#a78bfa" stroke="#7c3aed" stroke-width="1.5"/><rect x="14" y="21" width="8" height="2" rx="1" fill="#fff" opacity="0.5"/></svg>',
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#2e1065"/><rect x="5" y="15" width="26" height="16" rx="3" fill="#7c3aed"/><rect x="12" y="11" width="12" height="6" rx="2" fill="#a78bfa" stroke="#7c3aed" stroke-width="1.5"/><line x1="12" y1="22" x2="24" y2="22" stroke="#fff" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/></svg>',
         },
         {
             name: "Contact",
             cmd: "openGuiViewer('contact')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect x="3" y="8" width="30" height="20" rx="4" fill="#0ea5e9"/><path d="M3 12 L18 21 L33 12" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#0c4a6e"/><rect x="4" y="10" width="28" height="18" rx="3" fill="#0ea5e9"/><path d="M4 14 L18 22 L32 14" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',
         },
         {
             name: "Resume.pdf",
             cmd: "openApp('pdf')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><path d="M6 2 L24 2 L30 8 L30 34 L6 34 Z" fill="#ef4444"/><path d="M24 2 L24 8 L30 8 Z" fill="#fca5a5"/><text x="18" y="23" text-anchor="middle" font-size="8" font-weight="bold" fill="#fff" font-family="monospace">PDF</text></svg>',
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#7f1d1d"/><path d="M9 5 L23 5 L27 9 L27 31 L9 31 Z" fill="#fff" opacity="0.95"/><path d="M23 5 L23 9 L27 9 Z" fill="#fca5a5"/><text x="18" y="22" text-anchor="middle" font-size="6.5" font-weight="900" fill="#991b1b" font-family="monospace">PDF</text></svg>',
         },
         {
             name: "SugarSync",
             cmd: "openApp('sugarsync')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect x="4" y="4" width="28" height="28" rx="6" fill="#22c55e"/><rect x="8" y="8" width="20" height="20" rx="4" fill="#16a34a"/><circle cx="18" cy="18" r="5" fill="#86efac"/><circle cx="18" cy="18" r="2" fill="#fff"/></svg>',
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#14532d"/><circle cx="18" cy="18" r="10" fill="#16a34a"/><path d="M13 18 Q13 12 18 12 Q22 12 23 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M23 18 Q23 24 18 24 Q14 24 13 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><polyline points="22,13 22,16 25,16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
         },
         {
             name: "Watchlist",
             cmd: "openApp('watchlist')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#7c3aed"/><rect x="10" y="16" width="16" height="14" rx="3" fill="#fbbf24"/><circle cx="14" cy="13" r="3" fill="#ef4444"/><circle cx="22" cy="13" r="3" fill="#ef4444"/><circle cx="18" cy="10" r="3" fill="#ef4444"/></svg>',
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#4c1d95"/><rect x="9" y="18" width="18" height="12" rx="3" fill="#fbbf24"/><circle cx="13" cy="15" r="3.5" fill="#f87171"/><circle cx="23" cy="15" r="3.5" fill="#f87171"/><circle cx="18" cy="11" r="3.5" fill="#f87171"/></svg>',
         },
         {
             name: "GitHub",
             cmd: "window.open('https://github.com/rohan-unbeg','_blank')",
-            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="16" fill="#24292e"/><path d="M18 6C11.37 6 6 11.37 6 18c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C26.565 27.795 30 23.295 30 18c0-6.63-5.37-12-12-12Z" fill="#fff"/></svg>',
+            icon: '<svg viewBox="0 0 36 36" width="36" height="36"><rect width="36" height="36" rx="8" fill="#161b22"/><path d="M18 6C11.37 6 6 11.37 6 18c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.17c-3.34.73-4.04-1.44-4.04-1.44-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49.99.1-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C26.56 27.8 30 23.3 30 18c0-6.63-5.37-12-12-12Z" fill="#fff"/></svg>',
         },
     ];
     let html = "";
     items.forEach((i) => {
         html +=
-            '<div class="desktop-icon" onclick="' +
-            i.cmd +
-            '" title="' +
-            i.name +
-            '">' +
-            '<div class="desktop-icon-img">' +
-            i.icon +
-            "</div>" +
-            '<div class="desktop-icon-name">' +
-            i.name +
-            "</div>" +
+            '<div class="desktop-icon" ondblclick="' + i.cmd + '" onclick="selectDesktopIcon(this)" title="' + i.name + '">' +
+            '<div class="desktop-icon-img">' + i.icon + "</div>" +
+            '<div class="desktop-icon-name">' + i.name + "</div>" +
             "</div>";
     });
     container.innerHTML = html;
 }
 
-// ── OS Desktop functions ─────────────────────────────────────────────────────
+function selectDesktopIcon(el) {
+    document.querySelectorAll(".desktop-icon").forEach(e => e.classList.remove("selected"));
+    el.classList.add("selected");
+}
+
+// ── App Drawer (Ubuntu Activities) ────────────────────────────────────────────
+const APP_DRAWER_ITEMS = [
+    { name: "Terminal",   icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#1c1c2e"/><polyline points="8,24 15,18 8,12" fill="none" stroke="#4ac94a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="17" y1="24" x2="28" y2="24" stroke="#4ac94a" stroke-width="2.5" stroke-linecap="round"/></svg>',   action: () => toggleApp("terminal") },
+    { name: "Explorer",   icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#92400e"/><path d="M6 14 Q6 10 10 10 L15 10 L17 13 L28 13 Q30 13 30 15 L30 28 Q30 30 28 30 L8 30 Q6 30 6 28 Z" fill="#fbbf24"/><path d="M6 17 L30 17 L30 28 Q30 30 28 30 L8 30 Q6 30 6 28 Z" fill="#fde68a"/></svg>',   action: () => toggleApp("explorer") },
+    { name: "Resume",     icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#7f1d1d"/><path d="M9 5 L23 5 L27 9 L27 31 L9 31 Z" fill="#fff" opacity="0.95"/><path d="M23 5 L23 9 L27 9 Z" fill="#fca5a5"/><text x="18" y="22" text-anchor="middle" font-size="6.5" font-weight="900" fill="#991b1b" font-family="monospace">PDF</text></svg>',   action: () => toggleApp("pdf") },
+    { name: "SugarSync",  icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#14532d"/><circle cx="18" cy="18" r="10" fill="#16a34a"/><path d="M13 18 Q13 12 18 12 Q22 12 23 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M23 18 Q23 24 18 24 Q14 24 13 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><polyline points="22,13 22,16 25,16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',  action: () => toggleApp("sugarsync") },
+    { name: "Snake",      icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#14532d"/><path d="M8 22 Q8 28 13 28 L20 28 Q24 28 24 24 L24 20 Q24 16 20 16 L14 16 Q10 16 10 12 Q10 8 14 8 L24 8" fill="none" stroke="#4ade80" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="8" r="2.5" fill="#4ade80"/></svg>',      action: () => toggleApp("snake") },
+    { name: "Watchlist",  icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#4c1d95"/><rect x="9" y="18" width="18" height="12" rx="3" fill="#fbbf24"/><circle cx="13" cy="15" r="3.5" fill="#f87171"/><circle cx="23" cy="15" r="3.5" fill="#f87171"/><circle cx="18" cy="11" r="3.5" fill="#f87171"/></svg>',  action: () => toggleApp("watchlist") },
+    { name: "About Me",   icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#1e3a5f"/><circle cx="18" cy="13" r="5" fill="#60a5fa"/><path d="M8 28 Q8 21 18 21 Q28 21 28 28" fill="#3b82f6"/></svg>',   action: () => openGuiViewer("about") },
+    { name: "Skills",     icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#1e1b4b"/><rect x="5" y="22" width="5" height="10" rx="2" fill="#e95420"/><rect x="13" y="16" width="5" height="16" rx="2" fill="#7c3aed"/><rect x="21" y="11" width="5" height="21" rx="2" fill="#059669"/><rect x="29" y="18" width="4" height="14" rx="2" fill="#f59e0b"/></svg>',     action: () => openGuiViewer("skills") },
+    { name: "Experience", icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#2e1065"/><rect x="5" y="15" width="26" height="16" rx="3" fill="#7c3aed"/><rect x="12" y="11" width="12" height="6" rx="2" fill="#a78bfa" stroke="#7c3aed" stroke-width="1.5"/></svg>', action: () => openGuiViewer("experience") },
+    { name: "Contact",    icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#0c4a6e"/><rect x="4" y="10" width="28" height="18" rx="3" fill="#0ea5e9"/><path d="M4 14 L18 22 L32 14" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',    action: () => openGuiViewer("contact") },
+    { name: "GitHub",     icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#161b22"/><path d="M18 6C11.37 6 6 11.37 6 18c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.17c-3.34.73-4.04-1.44-4.04-1.44-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49.99.1-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C26.56 27.8 30 23.3 30 18c0-6.63-5.37-12-12-12Z" fill="#fff"/></svg>',     action: () => window.open("https://github.com/rohan-unbeg","_blank") },
+    { name: "LinkedIn",   icon: '<svg viewBox="0 0 36 36" width="48" height="48"><rect width="36" height="36" rx="8" fill="#0a66c2"/><rect x="7" y="14" width="5" height="15" rx="1" fill="#fff"/><circle cx="9.5" cy="9.5" r="2.8" fill="#fff"/><path d="M15 14 L15 29 L20 29 L20 21 Q20 18 23 18 Q26 18 26 21 L26 29 L31 29 L31 20 Q31 14 25 14 Q22 14 20 17 L20 14 Z" fill="#fff"/></svg>',   action: () => window.open("https://linkedin.com/in/rohanunbeg/","_blank") },
+];
+
+window.toggleAppDrawer = function() {
+    const el = document.getElementById("app-drawer-overlay");
+    if (!el) return;
+    if (el.classList.contains("open")) {
+        closeAppDrawer();
+    } else {
+        el.classList.add("open");
+        buildAppDrawer("");
+        setTimeout(() => {
+            const s = document.getElementById("app-drawer-search");
+            if (s) s.focus();
+        }, 80);
+    }
+};
+
+window.closeAppDrawer = function() {
+    const el = document.getElementById("app-drawer-overlay");
+    if (el) el.classList.remove("open");
+};
+
+function buildAppDrawer(query) {
+    const grid = document.getElementById("app-drawer-grid");
+    if (!grid) return;
+    const q = (query || "").toLowerCase().trim();
+    const items = q ? APP_DRAWER_ITEMS.filter(i => i.name.toLowerCase().includes(q)) : APP_DRAWER_ITEMS;
+    grid.innerHTML = items.map(i =>
+        `<div class="app-drawer-item" onclick="appDrawerLaunch(${APP_DRAWER_ITEMS.indexOf(i)})">
+            <div class="app-drawer-item-icon">${i.icon}</div>
+            <div class="app-drawer-item-name">${escHtml(i.name)}</div>
+        </div>`
+    ).join("");
+}
+
+window.appDrawerLaunch = function(idx) {
+    closeAppDrawer();
+    setTimeout(() => APP_DRAWER_ITEMS[idx].action(), 80);
+};
+
+// Wire up app drawer search
+document.addEventListener("DOMContentLoaded", () => {
+    const s = document.getElementById("app-drawer-search");
+    if (s) {
+        s.addEventListener("input", () => buildAppDrawer(s.value));
+        s.addEventListener("keydown", e => {
+            if (e.key === "Escape") closeAppDrawer();
+            e.stopPropagation();
+        });
+    }
+});
+
+// Close app drawer when clicking backdrop
+document.addEventListener("click", e => {
+    const drawer = document.getElementById("app-drawer-overlay");
+    if (drawer && drawer.classList.contains("open")) {
+        if (e.target === drawer) closeAppDrawer();
+    }
+});
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+        const drawer = document.getElementById("app-drawer-overlay");
+        if (drawer && drawer.classList.contains("open")) { closeAppDrawer(); e.stopPropagation(); }
+    }
+});
+
 function osUpdateClock() {
     const el = document.getElementById("os-clock");
     if (el) {
@@ -2879,7 +3646,17 @@ try {
     const clockEl = document.getElementById("os-clock");
     if (clockEl && !clockEl.textContent) {
         const now = new Date();
-        clockEl.textContent = now.toLocaleDateString("en-US", { month: "short", day: "numeric" }) + " " + now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false });
+        clockEl.textContent =
+            now.toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+            }) +
+            " " +
+            now.toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: false,
+            });
     }
 } catch (e) {}
 
@@ -3072,9 +3849,13 @@ function initSnakeApp() {
     scoreEl.style.cssText =
         "text-align:center;color:#4ac94a;font-family:monospace;font-size:13px;margin-bottom:12px;";
     let highScore = 0;
-    try { highScore = parseInt(localStorage.getItem("pf_snake_hi")) || 0; } catch(e) {}
+    try {
+        highScore = parseInt(localStorage.getItem("pf_snake_hi")) || 0;
+    } catch (e) {}
     scoreEl.innerHTML =
-        'Score: <b id="app-snk-score">0</b> | Speed: <b id="app-snk-speed">1x</b> | Best: <b id="app-snk-high">' + highScore + '</b><br><span style="color:#6a5572;font-size:10px;">Arrow Keys to play</span>';
+        'Score: <b id="app-snk-score">0</b> | Speed: <b id="app-snk-speed">1x</b> | Best: <b id="app-snk-high">' +
+        highScore +
+        '</b><br><span style="color:#6a5572;font-size:10px;">Arrow Keys to play</span>';
     container.appendChild(scoreEl);
 
     const canvas = document.createElement("canvas");
@@ -3185,7 +3966,7 @@ function initSnakeApp() {
                     const hiEl = document.getElementById("app-snk-high");
                     if (hiEl) hiEl.textContent = score;
                 }
-            } catch(e) {}
+            } catch (e) {}
 
             ctx.fillStyle = "rgba(0,0,0,0.7)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -3249,7 +4030,7 @@ function stopSnakeGame() {
 const TOUR_STEPS = [
     {
         msg: `Hey! 👋 I'm <span class="tour-hi">Rohan</span> — welcome to my portfolio.<br><br>This isn't your average CV. It's a fully working <span class="tour-hi">Ubuntu OS simulation</span> built from scratch in vanilla JS. Let me show you around!`,
-        target: null,         // no spotlight — center screen intro
+        target: null, // no spotlight — center screen intro
         position: "center",
     },
     {
@@ -3336,7 +4117,9 @@ function endTour() {
         overlay.classList.remove("active");
         overlay.style.opacity = "";
         overlay.style.transition = "";
-        try { localStorage.setItem("pf_toured", "1"); } catch(e) {}
+        try {
+            localStorage.setItem("pf_toured", "1");
+        } catch (e) {}
     }, 350);
 }
 
@@ -3356,7 +4139,9 @@ function renderTourStep() {
 
     // Update dots
     const dotsEl = document.getElementById("tour-dots");
-    const visibleSteps = isDesktop ? TOUR_STEPS.length : TOUR_STEPS.filter(s => !s.desktopOnly).length;
+    const visibleSteps = isDesktop
+        ? TOUR_STEPS.length
+        : TOUR_STEPS.filter((s) => !s.desktopOnly).length;
     dotsEl.innerHTML = Array.from({ length: visibleSteps }, (_, i) => {
         // Map visible index to actual index (skip desktop-only on mobile)
         const cls = i === tourStep ? "tour-dot active" : "tour-dot";
@@ -3367,7 +4152,8 @@ function renderTourStep() {
     const prevBtn = document.getElementById("tour-prev");
     const nextBtn = document.getElementById("tour-next");
     prevBtn.style.display = tourStep === 0 ? "none" : "";
-    nextBtn.textContent = tourStep === TOUR_STEPS.length - 1 ? "Done ✓" : "Next →";
+    nextBtn.textContent =
+        tourStep === TOUR_STEPS.length - 1 ? "Done ✓" : "Next →";
 
     // Position spotlight + bubble
     const spotlight = document.getElementById("tour-spotlight");
@@ -3381,8 +4167,14 @@ function renderTourStep() {
 
         bubble.className = ""; // reset
         const bw = 320, bh = 220;
-        bubble.style.left = (window.innerWidth / 2 - bw / 2) + "px";
-        bubble.style.top  = (window.innerHeight / 2 - bh / 2) + "px";
+        // On mobile, use bottom-center fixed position (CSS handles this)
+        if (window.innerWidth < 640) {
+            bubble.style.left = "";
+            bubble.style.top = "";
+        } else {
+            bubble.style.left = window.innerWidth / 2 - bw / 2 + "px";
+            bubble.style.top = window.innerHeight / 2 - bh / 2 + "px";
+        }
         return;
     }
 
@@ -3397,52 +4189,61 @@ function renderTourStep() {
 
     // Position spotlight
     spotlight.style.opacity = "1";
-    spotlight.style.left   = (rect.left - pad) + "px";
-    spotlight.style.top    = (rect.top - pad) + "px";
-    spotlight.style.width  = (rect.width + pad * 2) + "px";
-    spotlight.style.height = (rect.height + pad * 2) + "px";
+    spotlight.style.left = rect.left - pad + "px";
+    spotlight.style.top = rect.top - pad + "px";
+    spotlight.style.width = rect.width + pad * 2 + "px";
+    spotlight.style.height = rect.height + pad * 2 + "px";
 
-    // Position bubble relative to target
+    // On mobile, let CSS handle fixed positioning
+    if (window.innerWidth < 640) {
+        bubble.className = "";
+        bubble.style.left = "";
+        bubble.style.top = "";
+        return;
+    }
+
+    // Position bubble relative to target — desktop only
     const bubbleW = 320;
-    const bubbleH = 180;
-    const margin  = 18;
+    const bubbleH = 200; // generous estimate
+    const margin = 18;
+    const TOPBAR_H = 34; // stay below topbar
+    const VIEWPORT_PAD = 10;
     let bx, by;
     let arrowClass = "";
 
-    switch (step.position) {
-        case "bottom":
-            bx = Math.min(rect.left, window.innerWidth - bubbleW - 10);
-            by = rect.bottom + margin;
-            arrowClass = "bubble-bottom";
-            break;
-        case "top":
-            bx = Math.min(rect.left, window.innerWidth - bubbleW - 10);
-            by = rect.top - bubbleH - margin;
-            arrowClass = "bubble-top";
-            break;
-        case "right":
-            bx = rect.right + margin;
-            by = rect.top;
-            arrowClass = "bubble-right";
-            break;
-        case "left":
-            bx = rect.left - bubbleW - margin;
-            by = rect.top;
-            arrowClass = "bubble-left";
-            break;
-        default:
-            bx = rect.left;
-            by = rect.bottom + margin;
-            arrowClass = "bubble-bottom";
+    // Helper: try a position and return whether it fits on screen
+    function tryPos(pos) {
+        switch (pos) {
+            case "bottom": return { x: rect.left, y: rect.bottom + margin, arrow: "bubble-bottom" };
+            case "top":    return { x: rect.left, y: rect.top - bubbleH - margin, arrow: "bubble-top" };
+            case "right":  return { x: rect.right + margin, y: rect.top, arrow: "bubble-right" };
+            case "left":   return { x: rect.left - bubbleW - margin, y: rect.top, arrow: "bubble-left" };
+            default:       return { x: rect.left, y: rect.bottom + margin, arrow: "" };
+        }
     }
 
-    // Keep bubble on screen
-    bx = Math.max(10, Math.min(bx, window.innerWidth - bubbleW - 10));
-    by = Math.max(40, Math.min(by, window.innerHeight - bubbleH - 10));
+    // Try preferred position, then fallback order
+    const fallbacks = [step.position, "bottom", "top", "right", "left"];
+    let chosen;
+    for (const pos of fallbacks) {
+        const candidate = tryPos(pos);
+        const fitH = candidate.y >= TOPBAR_H && candidate.y + bubbleH <= window.innerHeight - VIEWPORT_PAD;
+        const fitW = candidate.x >= VIEWPORT_PAD && candidate.x + bubbleW <= window.innerWidth - VIEWPORT_PAD;
+        if (fitH && fitW) { chosen = candidate; break; }
+    }
+    if (!chosen) chosen = tryPos(step.position);
+
+    bx = chosen.x;
+    by = chosen.y;
+    arrowClass = chosen.arrow;
+
+    // Keep bubble on screen with clamping
+    bx = Math.max(VIEWPORT_PAD, Math.min(bx, window.innerWidth - bubbleW - VIEWPORT_PAD));
+    by = Math.max(TOPBAR_H + 4, Math.min(by, window.innerHeight - bubbleH - VIEWPORT_PAD));
 
     bubble.className = arrowClass;
     bubble.style.left = bx + "px";
-    bubble.style.top  = by + "px";
+    bubble.style.top = by + "px";
 }
 
 // ── Onboarding Logic ──────────────────────────────────────────────────────
@@ -3461,19 +4262,25 @@ function initOnboarding() {
     // Show overlay
     overlay.classList.add("visible");
 
-    document.getElementById("onboarding-enter").addEventListener("click", () => {
-        const noShow = document.getElementById("onboarding-noshow");
-        if (noShow && noShow.checked) {
-            try { localStorage.setItem("pf_onboarded", "1"); } catch (e) {}
-            // If skipping tutorial, also mark tour as done
-            try { localStorage.setItem("pf_toured", "1"); } catch (e) {}
-        }
-        overlay.classList.add("fade-out");
-        setTimeout(() => {
-            overlay.remove();
-            boot();
-        }, 400);
-    });
+    document
+        .getElementById("onboarding-enter")
+        .addEventListener("click", () => {
+            const noShow = document.getElementById("onboarding-noshow");
+            if (noShow && noShow.checked) {
+                try {
+                    localStorage.setItem("pf_onboarded", "1");
+                } catch (e) {}
+                // If skipping tutorial, also mark tour as done
+                try {
+                    localStorage.setItem("pf_toured", "1");
+                } catch (e) {}
+            }
+            overlay.classList.add("fade-out");
+            setTimeout(() => {
+                overlay.remove();
+                boot();
+            }, 400);
+        });
 }
 
 initOnboarding();

@@ -1,0 +1,1328 @@
+/* ── Themes ─────────────────────────────────────────── */
+        :root, [data-theme="ubuntu"] {
+            --bg: #100c14;
+            --surface: #160e1e;
+            --header: #2c001e;
+            --border: #3a1a40;
+            --border2: #4a2a55;
+            --text: #ccc0d4;
+            --dim: #6a5572;
+            --prompt: #e95420;
+            /* Ubuntu orange */
+            --prompt2: #c7421a;
+            --green: #4ac94a;
+            --blue: #729fcf;
+            --yellow: #e9b96e;
+            --purple: #ad7fa8;
+            --red: #ef2929;
+            --cyan: #34e2e2;
+            --white: #eeeeec;
+            --header-h: 36px;
+        }
+
+        [data-theme="dracula"] {
+            --bg: #282a36;
+            --surface: #44475a;
+            --header: #21222c;
+            --border: #6272a4;
+            --border2: #44475a;
+            --text: #f8f8f2;
+            --dim: #6272a4;
+            --prompt: #ff79c6;
+            --prompt2: #bd93f9;
+            --green: #50fa7b;
+            --blue: #8be9fd;
+            --yellow: #f1fa8c;
+            --purple: #bd93f9;
+            --red: #ff5555;
+            --cyan: #8be9fd;
+            --white: #ffffff;
+            --header-h: 36px;
+        }
+
+        [data-theme="matrix"] {
+            --bg: #0d0d0d;
+            --surface: #000000;
+            --header: #001a00;
+            --border: #003300;
+            --border2: #002200;
+            --text: #00ff41;
+            --dim: #008f11;
+            --prompt: #00ff41;
+            --prompt2: #008f11;
+            --green: #00ff41;
+            --blue: #00ff41;
+            --yellow: #00ff41;
+            --purple: #00ff41;
+            --red: #00ff41;
+            --cyan: #00ff41;
+            --white: #00ff41;
+            --header-h: 36px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            overflow-x: hidden;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Ubuntu Mono', 'JetBrains Mono', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* ── Subtle scanline ────────────────────────────────── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: repeating-linear-gradient(0deg,
+                    rgba(0, 0, 0, 0.04) 0px, rgba(0, 0, 0, 0.04) 1px,
+                    transparent 1px, transparent 3px);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ── Layout ─────────────────────────────────────────── */
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            height: 100dvh;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.3s ease;
+        }
+
+        @media (min-width: 640px) {
+            .os-desktop {
+                background-image: url('https://assets.ubuntu.com/v1/8dd99b80-ubuntu-24.04-wallpaper-1080p.jpg');
+                background-size: cover;
+                background-position: center;
+                /* Fallback */
+                background-color: #2c001e;
+            }
+            [data-theme="dracula"] .os-desktop {
+                background-image: url('https://raw.githubusercontent.com/dracula/wallpaper/master/dracula.png');
+            }
+            [data-theme="matrix"] .os-desktop {
+                background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop');
+            }
+
+            .wrapper {
+                background: transparent !important;
+                pointer-events: none; /* Let clicks pass to desktop icons */
+                padding: 40px 12px 80px;
+            }
+            
+            .terminal {
+                pointer-events: all; /* Re-enable clicks on terminal */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .wrapper {
+                padding: 40px 20px 80px;
+            }
+        }
+
+        /* ── Terminal Window ────────────────────────────────── */
+        .terminal {
+            width: 100%;
+            max-width: 900px;
+            height: 100%;
+            max-height: 100dvh;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @media (min-width: 640px) {
+            .terminal {
+                max-height: calc(100dvh - 120px);
+                border-radius: 6px;
+                box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+            }
+        }
+
+        /* ── Ubuntu Header ──────────────────────────────────── */
+        .t-header {
+            height: var(--header-h);
+            background: var(--header);
+            border-bottom: 1px solid #4a0030;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 10px;
+            flex-shrink: 0;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .t-header:active {
+            cursor: grabbing;
+        }
+
+        .window-controls {
+            display: none;
+            gap: 6px;
+            margin-right: 8px;
+        }
+
+        @media (min-width: 640px) {
+            .window-controls {
+                display: flex;
+            }
+        }
+
+        .w-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: rgba(0,0,0,0.5);
+            opacity: 0.8;
+        }
+
+        .w-dot:hover { opacity: 1; }
+        .w-dot.close { background: #ff5f56; }
+        .w-dot.min { background: #ffbd2e; }
+        .w-dot.max { background: #27c93f; }
+        .w-dot:hover::before { content: 'x'; }
+        .w-dot.min:hover::before { content: '-'; }
+        .w-dot.max:hover::before { content: '+'; }
+
+        .t-title {
+            flex: 1;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.02em;
+            text-align: center;
+        }
+
+        .t-title .host {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .t-actions {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .btn-sm {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.7);
+            font-family: inherit;
+            font-size: 10px;
+            padding: 3px 9px;
+            border-radius: 3px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .btn-sm:hover, .btn-sm.active {
+            background: var(--prompt);
+            border-color: var(--prompt);
+            color: #fff;
+        }
+
+        /* ── Tab bar ────────────────────────────────────────── */
+        .t-tabs {
+            display: flex;
+            background: #120a1a;
+            border-bottom: 1px solid var(--border);
+            padding: 0 8px;
+            gap: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            flex-shrink: 0;
+        }
+
+        .t-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab {
+            padding: 5px 12px;
+            font-size: 11px;
+            color: var(--dim);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .tab:hover {
+            color: var(--text);
+        }
+
+        .tab.active {
+            color: var(--prompt);
+            border-bottom-color: var(--prompt);
+        }
+
+        /* ── Body ────────────────────────────────────────────── */
+        .t-body {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 12px 14px 8px;
+            word-break: break-word;
+            overscroll-behavior: contain;
+        }
+
+        @media (min-width: 640px) {
+            .t-body {
+                padding: 16px 22px 8px;
+            }
+        }
+
+        .t-body::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .t-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .t-body::-webkit-scrollbar-thumb {
+            background: var(--border2);
+            border-radius: 2px;
+        }
+
+        /* ── Output lines ───────────────────────────────────── */
+        .line {
+            margin-bottom: 2px;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        .line.gap {
+            margin-bottom: 10px;
+        }
+
+        .c-green {
+            color: var(--green);
+        }
+
+        .c-blue {
+            color: var(--blue);
+        }
+
+        .c-yellow {
+            color: var(--yellow);
+        }
+
+        .c-purple {
+            color: var(--purple);
+        }
+
+        .c-red {
+            color: var(--red);
+        }
+
+        .c-cyan {
+            color: var(--cyan);
+        }
+
+        .c-orange {
+            color: var(--prompt);
+        }
+
+        .c-dim {
+            color: var(--dim);
+        }
+
+        .c-white {
+            color: var(--white);
+        }
+
+        .bold {
+            font-weight: 700;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+            word-break: break-all;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* ── Prompt line ────────────────────────────────────── */
+        .prompt-line {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .prompt-user {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .prompt-at {
+            color: var(--dim);
+        }
+
+        .prompt-host {
+            color: var(--prompt);
+            font-weight: 700;
+        }
+
+        .prompt-sep {
+            color: var(--dim);
+        }
+
+        .prompt-dir {
+            color: var(--blue);
+        }
+
+        .prompt-sym {
+            color: var(--white);
+        }
+
+        /* ── Input line ─────────────────────────────────────── */
+        .input-section {
+            flex-shrink: 0;
+            border-top: 1px solid var(--border);
+            padding: 8px 14px;
+            background: var(--surface);
+        }
+
+        @media (min-width: 640px) {
+            .input-section {
+                padding: 10px 22px;
+            }
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+
+        #cmd-input {
+            flex: 1;
+            min-width: 0;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--white);
+            font-family: inherit;
+            font-size: 13px;
+            caret-color: var(--prompt);
+        }
+
+        .input-hint {
+            font-size: 10px;
+            color: var(--dim);
+            margin-top: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* ── Status bar ─────────────────────────────────────── */
+        .t-status {
+            height: 20px;
+            background: #0c0812;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 14px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .status-item {
+            font-size: 10px;
+            color: var(--dim);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .status-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--green);
+        }
+
+        /* ── ASCII Art Banner ───────────────────────────────── */
+        .banner {
+            font-size: 8px;
+            line-height: 1.2;
+            color: var(--prompt);
+            white-space: pre;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        @media (min-width: 480px) {
+            .banner {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .banner {
+                font-size: 11px;
+            }
+        }
+
+        /* ── Skill bars ─────────────────────────────────────── */
+        .skill-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 3px 0;
+            padding-left: 14px;
+        }
+
+        .skill-name {
+            width: 100px;
+            color: var(--text);
+            flex-shrink: 0;
+            font-size: 12px;
+        }
+
+        .skill-bar {
+            flex: 1;
+            height: 5px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+            min-width: 40px;
+        }
+
+        .skill-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.7s ease;
+        }
+
+        .skill-pct {
+            width: 34px;
+            text-align: right;
+            color: var(--dim);
+            font-size: 11px;
+            flex-shrink: 0;
+        }
+
+        /* ── Commit entry (text style) ──────────────────────── */
+        .commit-entry {
+            border-left: 2px solid var(--border2);
+            padding: 6px 10px;
+            margin: 6px 0 6px 14px;
+        }
+
+        .commit-entry:hover {
+            border-left-color: var(--prompt);
+        }
+
+        /* ── Project entry (text style) ─────────────────────── */
+        .project-entry {
+            border-left: 2px solid var(--border2);
+            padding: 6px 10px;
+            margin: 6px 0 6px 14px;
+        }
+
+        .project-entry:hover {
+            border-left-color: var(--blue);
+        }
+
+        /* ── Contact row ────────────────────────────────────── */
+        .contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 4px 0 4px 14px;
+            flex-wrap: wrap;
+        }
+
+        .contact-lbl {
+            color: var(--purple);
+            width: 80px;
+            flex-shrink: 0;
+            font-size: 12px;
+        }
+
+        .contact-val {
+            color: var(--blue);
+            word-break: break-all;
+            font-size: 12px;
+        }
+
+        /* ── Menu options ───────────────────────────────────── */
+        .menu-opt {
+            padding: 3px 0 3px 14px;
+            cursor: pointer;
+        }
+
+        .menu-opt:hover .menu-num {
+            color: var(--prompt);
+        }
+
+        .menu-opt:hover .menu-label {
+            color: var(--white);
+        }
+
+        .menu-num {
+            color: var(--prompt);
+            display: inline-block;
+            width: 24px;
+        }
+
+        .menu-label {
+            color: var(--text);
+        }
+
+        /* ── Badges ─────────────────────────────────────────── */
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 5px 0 5px 14px;
+        }
+
+        .badge {
+            border: 1px solid;
+            border-radius: 3px;
+            padding: 1px 7px;
+            font-size: 10px;
+        }
+
+        .badge-green {
+            border-color: #2a6e2a;
+            color: var(--green);
+            background: rgba(74, 201, 74, 0.06);
+        }
+
+        .badge-blue {
+            border-color: #2a4a6e;
+            color: var(--blue);
+            background: rgba(114, 159, 207, 0.06);
+        }
+
+        .badge-yellow {
+            border-color: #6e5a2a;
+            color: var(--yellow);
+            background: rgba(233, 185, 110, 0.06);
+        }
+
+        .badge-purple {
+            border-color: #5a2a6e;
+            color: var(--purple);
+            background: rgba(173, 127, 168, 0.06);
+        }
+
+        .badge-cyan {
+            border-color: #1a5a5a;
+            color: var(--cyan);
+            background: rgba(52, 226, 226, 0.06);
+        }
+
+        .badge-orange {
+            border-color: #6e2e10;
+            color: var(--prompt);
+            background: rgba(233, 84, 32, 0.06);
+        }
+
+        .badge-red {
+            border-color: #6e1a1a;
+            color: var(--red);
+            background: rgba(239, 41, 41, 0.06);
+        }
+
+        /* ── Copy toast ─────────────────────────────────────── */
+        #copy-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--prompt);
+            color: #fff;
+            font-weight: 700;
+            padding: 7px 14px;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.2s;
+            pointer-events: none;
+            z-index: 10000;
+        }
+
+        #copy-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Mobile quick keys ──────────────────────────────── */
+        .mob-keys {
+            display: none;
+            gap: 4px;
+            padding: 6px 10px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        @media (max-width: 640px) {
+            .mob-keys {
+                display: flex;
+            }
+        }
+
+        .mob-key {
+            background: var(--border);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .mob-key:active {
+            background: var(--border2);
+        }
+
+        /* ── Animations ─────────────────────────────────────── */
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.25s ease;
+        }
+
+        /* ── OS Desktop Simulation (desktop only) ───────────── */
+        .os-desktop {
+            display: none;
+        }
+
+        @media (min-width: 640px) {
+            .os-desktop {
+                display: block;
+                position: fixed;
+                inset: 0;
+                z-index: 0;
+                pointer-events: none;
+                background: url('../assets/wallpaper.jpg') center/cover no-repeat;
+                background-color: #060009;
+            }
+
+            .wrapper {
+                position: relative;
+                z-index: 1;
+            }
+
+            /* Top panel */
+            .os-topbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 28px;
+                background: rgba(10, 6, 14, 0.88);
+                backdrop-filter: blur(20px) saturate(1.5);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 12px;
+                z-index: 9000;
+                pointer-events: all;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .os-topbar-left,
+            .os-topbar-right {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .os-topbar-center {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .os-topbar-item {
+                color: rgba(255,255,255,0.9);
+                font-size: 11px;
+                font-family: 'Ubuntu Mono', monospace;
+                padding: 2px 7px;
+                border-radius: 4px;
+                cursor: pointer;
+                user-select: none;
+                transition: background 0.15s;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .os-topbar-item:hover {
+                background: rgba(255,255,255,0.12);
+            }
+
+            .os-topbar-btn {
+                padding: 3px 7px;
+            }
+
+            .os-activities {
+                color: #fff;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+            }
+
+            .os-activities:hover {
+                background: var(--prompt) !important;
+            }
+
+            /* Power menu */
+            .os-power-menu {
+                display: none;
+                position: fixed;
+                top: 32px;
+                right: 12px;
+                background: rgba(14, 10, 20, 0.96);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 10px;
+                min-width: 220px;
+                z-index: 9500;
+                pointer-events: all;
+                overflow: hidden;
+                box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+                backdrop-filter: blur(24px);
+            }
+
+            .os-power-menu.open {
+                display: block;
+            }
+
+            .os-power-profile {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 14px 16px 12px;
+                border-bottom: 1px solid rgba(255,255,255,0.07);
+            }
+
+            .os-power-avatar {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--prompt), #9b59b6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                font-weight: bold;
+                color: #fff;
+                flex-shrink: 0;
+            }
+
+            .os-power-item {
+                padding: 9px 16px;
+                font-family: 'Ubuntu Mono', monospace;
+                font-size: 12px;
+                color: rgba(255,255,255,0.85);
+                cursor: pointer;
+                transition: background 0.12s;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .os-power-item:hover {
+                background: rgba(255,255,255,0.07);
+                color: #fff;
+            }
+
+            .os-power-divider {
+                height: 1px;
+                background: rgba(255,255,255,0.07);
+                margin: 3px 0;
+            }
+
+            .os-power-shutdown {
+                color: #ef6b6b;
+            }
+
+            /* Dock */
+            .os-dock {
+                position: fixed;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                gap: 8px;
+                background: rgba(10, 6, 14, 0.78);
+                backdrop-filter: blur(20px) saturate(1.4);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 16px;
+                padding: 6px 14px;
+                z-index: 8000;
+                pointer-events: all;
+                box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+                transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease;
+            }
+
+            /* Dock hide when window maximized */
+            .os-desktop.dock-hidden .os-dock {
+                transform: translateX(-50%) translateY(calc(100% + 12px));
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            /* Hover zone at bottom to reveal dock when hidden */
+            .os-desktop.dock-hidden::after {
+                content: '';
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                z-index: 8001;
+                pointer-events: all;
+            }
+
+            .os-desktop.dock-hidden:hover .os-dock {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .os-dock-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2px;
+                cursor: pointer;
+                padding: 4px 8px;
+                border-radius: 8px;
+                transition: transform 0.15s, background 0.15s;
+                font-size: 22px;
+                line-height: 1;
+                min-width: 44px;
+                color: rgba(255,255,255,0.75);
+            }
+
+            .os-dock-item svg {
+                width: 24px;
+                height: 24px;
+                flex-shrink: 0;
+            }
+
+            .os-dock-item:hover {
+                transform: translateY(-6px) scale(1.15);
+                background: rgba(255,255,255,0.08);
+            }
+
+            .os-dock-item span {
+                font-size: 9px;
+                font-family: 'Ubuntu Mono', monospace;
+                color: rgba(255,255,255,0.6);
+                white-space: nowrap;
+            }
+
+            /* Dock active dot under icon */
+            .os-dock-item.running::after {
+                content: '';
+                display: block;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: var(--green);
+                margin: 0 auto;
+            }
+
+            /* ── Window open (scale-in from dock) ─── */
+            @keyframes scaleIn {
+                from { transform: scale(0.1) translateY(120px); opacity: 0; }
+                to   { transform: scale(1) translateY(0);     opacity: 1; }
+            }
+            /* ── Genie effect (warp into dock bottom) ─── */
+            @keyframes genieOut {
+                0%   { transform: scale(1) translateY(0)  scaleX(1);  opacity: 1; clip-path: inset(0 0 0 0 round 8px); }
+                40%  { transform: scale(0.6) translateY(30px) scaleX(0.8); opacity: 0.9; clip-path: inset(0 5% 0 5% round 8px); }
+                80%  { transform: scale(0.15) translateY(80px) scaleX(0.3); opacity: 0.5; clip-path: inset(20% 30% 0 30% round 6px); }
+                100% { transform: scale(0.05) translateY(120px) scaleX(0.1); opacity: 0; clip-path: inset(50% 45% 0 45% round 4px); }
+            }
+            @keyframes genieIn {
+                0%   { transform: scale(0.05) translateY(120px) scaleX(0.1); opacity: 0; clip-path: inset(50% 45% 0 45% round 4px); }
+                20%  { transform: scale(0.15) translateY(80px) scaleX(0.3);  opacity: 0.5; clip-path: inset(20% 30% 0 30% round 6px); }
+                60%  { transform: scale(0.6) translateY(30px) scaleX(0.8);   opacity: 0.9; clip-path: inset(0 5% 0 5% round 8px); }
+                100% { transform: scale(1) translateY(0) scaleX(1);          opacity: 1; clip-path: inset(0 0 0 0 round 8px); }
+            }
+
+            /* ── Scale-in when opened fresh from dock ─── */
+            .os-window.anim-scale-in {
+                animation: scaleIn 0.28s cubic-bezier(0.34,1.56,0.64,1) forwards;
+            }
+            /* ── Genie out (minimize) ─── */
+            .os-window.anim-genie-out {
+                animation: genieOut 0.38s cubic-bezier(0.4,0,1,1) forwards;
+                pointer-events: none;
+            }
+            /* ── Genie in (restore from minimized) ─── */
+            .os-window.anim-genie-in {
+                animation: genieIn 0.38s cubic-bezier(0,0,0.2,1) forwards;
+            }
+
+            /* Terminal — base transition */
+            .terminal {
+                transition: opacity 0.2s ease;
+            }
+
+            /* Terminal minimize uses genie too */
+            .terminal.minimized {
+                transform: scale(0.05) translateY(120px) scaleX(0.1);
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            /* Calendar Dropdown */
+            .os-calendar-dropdown {
+                display: none;
+                position: fixed;
+                top: 32px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(12, 8, 18, 0.97);
+                border: 1px solid rgba(255,255,255,0.12);
+                border-radius: 10px;
+                padding: 14px;
+                min-width: 260px;
+                z-index: 99999;
+                pointer-events: all;
+                box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.05);
+                backdrop-filter: blur(24px);
+            }
+
+            .os-calendar-dropdown.open {
+                display: block;
+            }
+
+            .cal-header {
+                display: flex;
+                justify-content: space-between;
+                color: #fff;
+                font-weight: bold;
+                margin-bottom: 10px;
+                font-family: 'Ubuntu Mono', monospace;
+            }
+
+            .cal-grid {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 4px;
+                text-align: center;
+                font-family: 'Ubuntu Mono', monospace;
+                font-size: 11px;
+            }
+
+            .cal-day {
+                padding: 4px;
+                border-radius: 3px;
+                cursor: default;
+                color: rgba(255,255,255,0.7);
+            }
+
+            .cal-day:hover {
+                background: rgba(255,255,255,0.1);
+            }
+
+            .cal-day.today {
+                background: var(--prompt);
+                color: #fff;
+                font-weight: bold;
+            }
+
+            .cal-day.empty {
+                pointer-events: none;
+            }
+
+            .cal-day-name {
+                color: var(--green);
+                font-weight: bold;
+                padding-bottom: 4px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                margin-bottom: 4px;
+            }
+
+            /* Desktop Icons */
+            .desktop-icons {
+                display: none;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .desktop-icons {
+                display: flex;
+                position: fixed;
+                top: 40px;
+                left: 12px;
+                flex-direction: column;
+                gap: 16px;
+                z-index: 10;
+                pointer-events: none; /* Container passes clicks */
+            }
+
+            .desktop-icon {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+                width: 72px;
+                cursor: pointer;
+                pointer-events: all; /* Icons catch clicks */
+                padding: 4px;
+                border-radius: 4px;
+                transition: background 0.15s;
+            }
+
+            .desktop-icon:hover, .desktop-icon.selected {
+                background: rgba(255,255,255,0.15);
+            }
+
+            .desktop-icon-img {
+                font-size: 32px;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+                color: rgba(255,255,255,0.85);
+            }
+
+            .desktop-icon-img svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .desktop-icon-name {
+                color: #fff;
+                font-size: 11px;
+                font-family: 'Ubuntu', sans-serif;
+                text-align: center;
+                text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+                line-height: 1.2;
+                word-wrap: break-word;
+            }
+        }
+
+        /* ── OS Window Manager ──────────────────────────────── */
+        .os-window {
+            position: absolute;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            pointer-events: all;
+            transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), opacity 0.2s ease;
+            z-index: 10;
+            transform-origin: center bottom;
+            will-change: transform, opacity;
+        }
+
+        .os-window.minimized {
+            transform: scale(0.05) translateY(200px) scaleX(0.1);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .os-window.closed {
+            display: none !important;
+        }
+
+        .os-window-header {
+            height: var(--header-h);
+            background: var(--header);
+            border-bottom: 1px solid #4a0030;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 10px;
+            cursor: grab;
+            user-select: none;
+            flex-shrink: 0;
+        }
+
+        .os-window-header:active {
+            cursor: grabbing;
+        }
+
+        .os-window-body {
+            flex: 1;
+            overflow: auto;
+            background: var(--bg);
+            position: relative;
+        }
+
+        /* ── Resize Handles ──────────────────────────────────── */
+        .rsz-handle {
+            position: absolute;
+            z-index: 10;
+            user-select: none;
+        }
+        .rsz-e  { right: 0;    top: 8px; bottom: 8px; width: 5px; cursor: ew-resize; }
+        .rsz-w  { left: 0;     top: 8px; bottom: 8px; width: 5px; cursor: ew-resize; }
+        .rsz-s  { bottom: 0;   left: 8px; right: 8px; height: 5px; cursor: ns-resize; }
+        .rsz-n  { top: 0;      left: 8px; right: 8px; height: 5px; cursor: ns-resize; }
+        .rsz-se { right: 0;   bottom: 0; width: 12px; height: 12px; cursor: nwse-resize; }
+        .rsz-sw { left: 0;    bottom: 0; width: 12px; height: 12px; cursor: nesw-resize; }
+        .rsz-ne { right: 0;    top: 0;   width: 12px; height: 12px; cursor: nesw-resize; }
+        .rsz-nw { left: 0;     top: 0;   width: 12px; height: 12px; cursor: nwse-resize; }
+        .rsz-se::after { content: ''; position: absolute; right: 3px; bottom: 3px; width: 6px; height: 6px;
+            border-right: 2px solid rgba(255,255,255,0.2); border-bottom: 2px solid rgba(255,255,255,0.2); border-radius: 1px; }
+        .explorer-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            width: 84px;
+            padding: 10px 6px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.15s;
+            user-select: none;
+        }
+
+        .explorer-icon:hover {
+            background: rgba(233, 84, 32, 0.15);
+        }
+
+        .explorer-icon:active {
+            background: rgba(233, 84, 32, 0.28);
+        }
+
+        .explorer-icon-img {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .explorer-icon-img svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .explorer-icon-name {
+            color: var(--text);
+            font-size: 10px;
+            text-align: center;
+            word-break: break-word;
+            line-height: 1.3;
+            max-width: 80px;
+        }
+
+        /* Explorer sidebar */
+        .explorer-sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--text);
+            font-size: 12px;
+            transition: background 0.15s;
+        }
+
+        .explorer-sidebar-item:hover {
+            background: rgba(255,255,255,0.07);
+        }
+
+        /* SugarSync window — lock aspect ratio, no resize overflow */
+        .os-window[data-app-id="sugarsync"] .os-window-body,
+        .os-window[data-app-id="pdf"] .os-window-body {
+            overflow: hidden;
+        }
+
+        /* Hide non-terminal windows on mobile */
+        @media (max-width: 639px) {
+            .os-window:not([data-app-id="terminal"]) {
+                display: none !important;
+            }
+            .terminal {
+                position: relative !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                max-width: none !important;
+                max-height: none !important;
+                border-radius: 0 !important;
+                border: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }

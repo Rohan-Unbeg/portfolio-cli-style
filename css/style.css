@@ -1121,17 +1121,17 @@
         @media (min-width: 640px) {
             .desktop-icons {
                 display: grid;
-                grid-template-columns: repeat(2, 72px);
-                grid-auto-rows: max-content;
+                grid-template-columns: 72px;
+                grid-auto-columns: 72px;
                 grid-auto-flow: column;
+                grid-template-rows: repeat(auto-fill, 88px);
                 position: fixed;
                 top: 40px;
                 left: 12px;
                 bottom: 80px;
-                gap: 16px;
+                gap: 8px;
                 z-index: 10;
                 pointer-events: none;
-                align-content: start;
             }
 
             .desktop-icon {

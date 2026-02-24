@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Rohan Unbeg — Portfolio</title>
+  <script>
+    // GitHub Pages SPA redirect — sends any 404 back to index.html
+    // preserving the path in sessionStorage so the app can handle it
+    var path = window.location.pathname;
+    sessionStorage.setItem('pf_redirect', path);
+    window.location.replace(
+      window.location.origin +
+      window.location.pathname.split('/').slice(0, 2).join('/') + '/'
+    );
+  </script>
+</head>
+<body></body>
+</html>

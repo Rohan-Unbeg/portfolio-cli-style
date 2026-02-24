@@ -1,0 +1,17 @@
+# Environment / secrets
+.env
+.env.*
+config.local.js
+js/config.js
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+*.swp
+
+# Generated
+assets/og-preview.svg
+/tmp/node_modules
